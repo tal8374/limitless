@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var fs = require('fs');
+var appHelper = require('./util/app');
 
 var app = express();
 
@@ -17,19 +17,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-var startRoutes = function (dir) {
-    const files = fs.readdirSync(dir);
-
-    files.forEach(function (componentsFolder) {
-        const route = "/" + componentsFolder;
-        const routePath = './components/' + componentsFolder + "/routes/" + componentsFolder + ".route"
-        const routeFile = require(routePath);
-
-        app.use(route, routeFile);
-    })
-};
-
-startRoutes('./components')
+appHelper.startRoutes('./components', app)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
