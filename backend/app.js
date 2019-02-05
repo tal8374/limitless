@@ -17,15 +17,7 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-fs.readdir('./components', (err, componentsFolders) => {
-    componentsFolders.forEach(function (componentsFolder) {
-        const route = "/" + componentsFolders;
-        const routePath = './components/' + componentsFolder + "/routes/" + componentsFolder + ".route"
-        const routeFile = require(routePath);
 
-        app.use(route, routeFile);
-    })
-});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
