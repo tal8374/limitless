@@ -17,7 +17,7 @@ const LessonSchema = new Schema({
     date: {type: 'Date', required: true},
     createdAt: {type: 'Date', required: true, default: new Date()},
     price: {type: 'Number', required: false},
-    type: {type: 'String', required: false}
+    type: {type: 'String', required: true}
 });
 
 module.exports = mongoose.model('lesson', LessonSchema);
