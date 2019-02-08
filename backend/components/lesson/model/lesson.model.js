@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const UserSchema = require('../../user/model/user.model');
@@ -20,4 +20,4 @@ const LessonSchema = new Schema({
     type: {type: 'String', required: true}
 });
 
-module.exports = mongoose.model('lesson', LessonSchema);
+module.exports = LessonSchema;
