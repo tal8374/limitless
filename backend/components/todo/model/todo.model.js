@@ -14,4 +14,7 @@ const TodoSchema = new Schema({
     essay: {type: EssaySchema, required: false},
 });
 
-module.exports = mongoose.model('todo', TodoSchema);
+module.exports = {
+    TodoModel: mongoose.model('todo', TodoSchema),
+    TodoSchema: TodoSchema
+};
