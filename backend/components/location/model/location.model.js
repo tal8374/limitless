@@ -7,4 +7,4 @@ const LocationSchema = new Schema({
     street: {type: 'String', required: false}
 });
 
-module.exports = mongoose.model('location', LocationSchema);
+module.exports = LocationSchema;
