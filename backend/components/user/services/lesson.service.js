@@ -1,8 +1,8 @@
-function addLesson(payload) {
+function createLesson(payload) {
 
 }
 
-function removeLesson(payload) {
+function deleteLesson(payload) {
 
 }
 
@@ -16,9 +16,9 @@ function getLessons(payload) {
 
 
 module.exports = {
-    addLesson,
+    createLesson,
 
-    removeLesson,
+    deleteLesson,
 
     getLesson,
 

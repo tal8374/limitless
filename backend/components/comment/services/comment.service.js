@@ -6,11 +6,11 @@ function getComments(payload) {
 
 }
 
-function createComment(payload) {
+function addComment(payload) {
 
 }
 
-function deleteComment(payload) {
+function removeComment(payload) {
 
 }
 
@@ -23,9 +23,9 @@ module.exports = {
 
     getComments,
 
-    createComment,
+    addComment,
 
-    deleteComment,
+    removeComment,
 
     updateComment
 };

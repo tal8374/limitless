@@ -6,11 +6,11 @@ function getTeachingLocation(payload) {
 
 }
 
-function addTeachingLocations(payload) {
+function createTeachingLocations(payload) {
 
 }
 
-function removeTeachingLocations(payload) {
+function deleteTeachingLocations(payload) {
 
 }
 
@@ -23,9 +23,9 @@ module.exports = {
 
     getTeachingLocation,
 
-    addTeachingLocations,
+    createTeachingLocations,
 
-    removeTeachingLocations,
+    deleteTeachingLocations,
 
     updateTeachingLocations
 };

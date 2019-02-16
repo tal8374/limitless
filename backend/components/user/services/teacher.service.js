@@ -1,8 +1,8 @@
-function addTeacher(payload) {
+function createTeacher(payload) {
 
 }
 
-function removeTeacher(payload) {
+function deleteTeacher(payload) {
 
 }
 
@@ -16,9 +16,9 @@ function getTeachers(payload) {
 
 
 module.exports = {
-    addTeacher,
+    createTeacher,
 
-    removeTeacher,
+    deleteTeacher,
 
     getTeacher,
 
