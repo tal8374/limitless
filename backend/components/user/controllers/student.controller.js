@@ -9,11 +9,11 @@ function deleteStudent(req, res) {
 }
 
 function getStudent(req, res) {
-
+    res.send(req.params)
 }
 
 function getStudents(req, res) {
-
+    res.send('hey')
 }
 
 module.exports = {

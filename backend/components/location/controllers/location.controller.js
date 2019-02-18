@@ -1,20 +1,20 @@
-function getLocation(payload) {
+function getLocation(req, res) {
+    res.send(req.params)
+}
+
+function getLocations(req, res) {
+    res.send('hello')
+}
+
+function createLocation(req, res) {
 
 }
 
-function getLocations(payload) {
+function deleteLocation(req, res) {
 
 }
 
-function createLocation(payload) {
-
-}
-
-function deleteLocation(payload) {
-
-}
-
-function updateLocation(payload) {
+function updateLocation(req, res) {
 
 }
 

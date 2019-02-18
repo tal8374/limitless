@@ -1,15 +1,17 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
+const appHelper = require('../../../util/app');
 const messageController = require('../controllers/message.controller');
 
-router
-    .get('/', messageController.getMessages);
 
 router
-    .get('/:messageId', messageController.getMessage)
-    .put('/:messageId', messageController.updateMessage)
-    .post('/:messageId', messageController.createMessage)
-    .delete('/:messageId', messageController.deleteMessage);
+    .get(appHelper.createPath('message', 'message', false), messageController.getMessages);
+
+router
+    .get(appHelper.createPath('message', 'message', true), messageController.getMessage)
+    .put(appHelper.createPath('message', 'message', true), messageController.updateMessage)
+    .post(appHelper.createPath('message', 'message', true), messageController.createMessage)
+    .delete(appHelper.createPath('message', 'message', true), messageController.deleteMessage);
 
 module.exports = router;

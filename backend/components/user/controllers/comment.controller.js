@@ -1,11 +1,11 @@
 const commentService = require('../services/comment.service');
 
 function getComment(req, res) {
-
+    res.send(req.params)
 }
 
 function getComments(req, res) {
-
+    res.send('hey');
 }
 
 function createComment(req, res) {

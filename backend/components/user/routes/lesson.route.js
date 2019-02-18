@@ -1,15 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
+const appHelper = require('../../../util/app');
 const lessonController = require('../controllers/lesson.controller');
 
 router
-    .get('/:userId/lesson', lessonController.getLessons);
+    .get(appHelper.createPath('user', 'lesson', false), lessonController.getLessons);
 
 router
-    .get('/:userId/lesson/:commentId', lessonController.getLesson)
-    .put('/:userId/lesson/:commentId', lessonController.updateLesson)
-    .post('/:userId/lesson/:commentId', lessonController.createLesson)
-    .delete('/:userId/lesson/:commentId', lessonController.deleteLesson);
+    .get(appHelper.createPath('user', 'lesson', true), lessonController.getLesson)
+    .put(appHelper.createPath('user', 'lesson', true), lessonController.updateLesson)
+    .post(appHelper.createPath('user', 'lesson', true), lessonController.createLesson)
+    .delete(appHelper.createPath('user', 'lesson', true), lessonController.deleteLesson);
 
 module.exports = router;

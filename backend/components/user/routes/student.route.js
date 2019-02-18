@@ -1,14 +1,15 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
+const appHelper = require('../../../util/app');
 const studentController = require('../controllers/student.controller');
 
 router
-    .get('/:userId/student', studentController.getStudents);
+    .get(appHelper.createPath('user', 'student', false), studentController.getStudents);
 
 router
-    .get('/:userId/student/:studentId', studentController.getStudent)
-    .post('/:userId/student/:studentId', studentController.createStudent)
-    .delete('/:userId/student/:studentId', studentController.deleteStudent);
+    .get(appHelper.createPath('user', 'student', true), studentController.getStudent)
+    .post(appHelper.createPath('user', 'student', true), studentController.createStudent)
+    .delete(appHelper.createPath('user', 'student', true), studentController.deleteStudent);
 
 module.exports = router;

@@ -1,15 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
+const appHelper = require('../../../util/app');
 const learningLocationController = require('../controllers/learning-location.controller');
 
 router
-    .get('/:userId/learning-location', learningLocationController.getLearningLocations);
+    .get(appHelper.createPath('user', 'learning-location', false), learningLocationController.getLearningLocations);
 
 router
-    .get('/:userId/learning-location/:learningLocationId', learningLocationController.getLearningLocation)
-    .put('/:userId/learning-location/:learningLocationId', learningLocationController.updateLearningLocation)
-    .post('/:userId/learning-location/:learningLocationId', learningLocationController.createLearningLocation)
-    .delete('/:userId/learning-location/:learningLocationId', learningLocationController.deleteLearningLocation);
+    .get(appHelper.createPath('user', 'learning-location', true), learningLocationController.getLearningLocation)
+    .put(appHelper.createPath('user', 'learning-location', true), learningLocationController.updateLearningLocation)
+    .post(appHelper.createPath('user', 'learning-location', true), learningLocationController.createLearningLocation)
+    .delete(appHelper.createPath('user', 'learning-location', true), learningLocationController.deleteLearningLocation);
 
 module.exports = router;

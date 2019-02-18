@@ -1,15 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
+const appHelper = require('../../../util/app');
 const commentController = require('../controllers/comment.controller');
 
 router
-    .get('/', commentController.getComments);
+    .get(appHelper.createPath('comment', 'comment', false), commentController.getComments);
 
 router
-    .get('/:commentId', commentController.getComment)
-    .put('/:commentId', commentController.updateComment)
-    .post('/:commentId', commentController.createComment)
-    .delete('/:commentId', commentController.deleteComment);
+    .get(appHelper.createPath('comment', 'comment', true), commentController.getComment)
+    .put(appHelper.createPath('comment', 'comment', true), commentController.updateComment)
+    .post(appHelper.createPath('comment', 'comment', true), commentController.createComment)
+    .delete(appHelper.createPath('comment', 'comment', true), commentController.deleteComment);
 
 module.exports = router;

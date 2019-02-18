@@ -1,20 +1,21 @@
-function getMessage(payload) {
+function getMessage(req, res) {
+    res.send(req.params)
+}
+
+function getMessages(req, res) {
+    res.send('hey')
 
 }
 
-function getMessages(payload) {
+function createMessage(req, res) {
 
 }
 
-function createMessage(payload) {
+function deleteMessage(req, res) {
 
 }
 
-function deleteMessage(payload) {
-
-}
-
-function updateMessage(payload) {
+function updateMessage(req, res) {
 
 }
 

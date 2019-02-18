@@ -1,15 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
+const appHelper = require('../../../util/app');
 const locationController = require('../controllers/location.controller');
 
 router
-    .get('/', locationController.getLocations);
+    .get(appHelper.createPath('location', 'location', false), locationController.getLocations);
 
 router
-    .get('/:locationId', locationController.getLocation)
-    .put('/:locationId', locationController.updateLocation)
-    .post('/:locationId', locationController.createLocation)
-    .delete('/:locationId', locationController.deleteLocation);
+    .get(appHelper.createPath('location', 'location', true), locationController.getLocation)
+    .put(appHelper.createPath('location', 'location', true), locationController.updateLocation)
+    .post(appHelper.createPath('location', 'location', true), locationController.createLocation)
+    .delete(appHelper.createPath('location', 'location', true), locationController.deleteLocation);
 
 module.exports = router;

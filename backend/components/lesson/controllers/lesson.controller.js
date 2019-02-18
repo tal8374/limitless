@@ -1,11 +1,11 @@
 const lessonService = require('../services/lesson.service');
 
 function getLesson(req, res) {
-
+    res.send(req.params)
 }
 
 function getLessons(req, res) {
-
+    res.send('hey')
 }
 
 function createLesson(req, res) {
