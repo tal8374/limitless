@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var appHelper = require('./util/app');
+var mongoose = require('mongoose');
+var config = require('./config/config');
 
 var app = express();
 
@@ -17,7 +19,9 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-appHelper.startRoutes(app)
+appHelper.startRoutes(app);
+
+mongoose.connect(config.mongooseLocalURL, { useNewUrlParser: true });﻿
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
