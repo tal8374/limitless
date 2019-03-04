@@ -5,11 +5,10 @@ const appHelper = require('../../../util/app');
 const studentController = require('../controllers/student.controller');
 
 router
-    .get(appHelper.createPath('user', 'student', false), studentController.getStudents);
+    .get(appHelper.createPath('user', 'student', false), studentController.list)
+    .post(appHelper.createPath('user', 'student', false), studentController.create);
 
 router
-    .get(appHelper.createPath('user', 'student', true), studentController.getStudent)
-    .post(appHelper.createPath('user', 'student', true), studentController.createStudent)
-    .delete(appHelper.createPath('user', 'student', true), studentController.deleteStudent);
+    .delete(appHelper.createPath('user', 'student', true), studentController.remove);
 
 module.exports = router;

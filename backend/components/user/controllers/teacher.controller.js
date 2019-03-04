@@ -1,28 +1,52 @@
 const teacherService = require('../services/teacher.service');
+const async = require('async');
 
-function createTeacher(req, res) {
+function list(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        teacherService.list
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.userTeachers)
+    });
 }
 
-function deleteTeacher(req, res) {
-
+function create(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        teacherService.create
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.newTeacher)
+    });
 }
 
-function getTeacher(req, res) {
-    res.send(req.params)
-
-}
-
-function getTeachers(req, res) {
-    res.send('hey')
-
+function remove(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        teacherService.remove
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.removedTeacher)
+    });
 }
 
 module.exports = {
-    createTeacher,
+    list,
 
-    deleteTeacher,
+    create,
 
-    getTeacher,
-
-    getTeachers
+    remove,
 };

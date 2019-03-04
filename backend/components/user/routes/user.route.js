@@ -1,19 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
 const appHelper = require('../../../util/app');
 const userController = require('../controllers/user.controller');
 
-console.log('the path ' + appHelper.createPath('user', 'user', false))
+router
+    .get(appHelper.createPath('user', 'user', false), userController.list)
+    .post(appHelper.createPath('user', 'user', false), userController.create);
 
 router
-    .get(appHelper.createPath('user', 'user', false), userController.getUsers);
-    // .get(appHelper.createPath('user', 'user', false), userController.getUsers);
-
-router
-    .get(appHelper.createPath('user', 'user', true), userController.getUser)
-    .put(appHelper.createPath('user', 'user', true), userController.updateUser)
-    .post(appHelper.createPath('user', 'user', true), userController.createUser)
-    .delete(appHelper.createPath('user', 'user', true), userController.deleteUser);
+    .get(appHelper.createPath('user', 'user', true), userController.get)
+    .put(appHelper.createPath('user', 'user', true), userController.update)
+    .delete(appHelper.createPath('user', 'user', true), userController.remove);
 
 module.exports = router;

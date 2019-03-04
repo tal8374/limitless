@@ -1,27 +1,52 @@
 const studentService = require('../services/student.service');
+const async = require('async');
 
-function createStudent(paylreq, resoad) {
-
+function list(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        studentService.list
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.userStudents)
+    });
 }
 
-function deleteStudent(req, res) {
-
+function create(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        studentService.create
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.newStudent)
+    });
 }
 
-function getStudent(req, res) {
-    res.send(req.params)
-}
-
-function getStudents(req, res) {
-    res.send('hey')
+function remove(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        studentService.remove
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.removedStudent)
+    });
 }
 
 module.exports = {
-    createStudent,
+    list,
 
-    deleteStudent,
+    create,
 
-    getStudent,
-
-    getStudents
+    remove,
 };

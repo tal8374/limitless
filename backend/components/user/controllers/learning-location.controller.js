@@ -1,33 +1,69 @@
 const learningLocationService = require('../services/learning-location.service');
+const userService = require('../services/user.service');
+const async = require('async');
 
-function getLearningLocations(req, res) {
-    res.send('hey')
+function list(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        learningLocationService.list,
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.userLearningLocation)
+    });
 }
 
-function getLearningLocation(req, res) {
-    res.send(req.params)
+function create(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        learningLocationService.create
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.newLearningLocation)
+    });
 }
 
-function createLearningLocation(req, res) {
-
+function remove(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        learningLocationService.remove
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.removedLearningLocation)
+    });
 }
 
-function deleteLearningLocation(req, res) {
-
-}
-
-function updateLearningLocation(req, res) {
-
+function update(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        learningLocationService.update
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result)
+    });
 }
 
 module.exports = {
-    getLearningLocations,
+    list,
 
-    getLearningLocation,
+    create,
 
-    createLearningLocation,
+    remove,
 
-    deleteLearningLocation,
-
-    updateLearningLocation
+    update
 };

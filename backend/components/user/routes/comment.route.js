@@ -5,12 +5,11 @@ const appHelper = require('../../../util/app');
 const commentController = require('../controllers/comment.controller');
 
 router
-    .get(appHelper.createPath('user', 'comment', false), commentController.getComments);
+    .get(appHelper.createPath('user', 'comment', false), commentController.list)
+    .post(appHelper.createPath('user', 'comment', false), commentController.create);
 
 router
-    .get(appHelper.createPath('user', 'comment', true), commentController.getComment)
-    .put(appHelper.createPath('user', 'comment', true), commentController.updateComment)
-    .post(appHelper.createPath('user', 'comment', true), commentController.createComment)
-    .delete(appHelper.createPath('user', 'comment', true), commentController.deleteComment);
+    .put(appHelper.createPath('user', 'comment', true), commentController.update)
+    .delete(appHelper.createPath('user', 'comment', true), commentController.remove);
 
 module.exports = router;

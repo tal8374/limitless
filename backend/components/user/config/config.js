@@ -5,9 +5,6 @@ module.exports = {
     "learning-location": {
         dependency: 'user'
     },
-    lesson: {
-        dependency: 'user'
-    },
     student: {
         dependency: 'user'
     },

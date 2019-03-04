@@ -1,33 +1,91 @@
 const userService = require('../services/user.service');
+const async = require('async');
 
-function getUsers(req, res) {
-    res.send('hello')
+function list(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        userService.list,
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.users)
+    });
 }
 
-function getUser(req, res) {
-    res.send(req.params)
+function createSearchUserQuery(payload, callback) {
+    payload.query = {_id: payload.req.params.userId};
+
+    callback(null, payload);
 }
 
-function createUser(req, res) {
-
+function get(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        createSearchUserQuery,
+        userService.get,
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.user)
+    });
 }
 
-function deleteUser(req, res) {
-
+function create(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        userService.create,
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.newUser)
+    });
 }
 
-function updateUser(req, res) {
+async function remove(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        userService.remove,
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.removedUser)
+    });
+}
 
+function update(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        userService.update,
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.updatedUser)
+    });
 }
 
 module.exports = {
-    getUsers,
+    list,
 
-    getUser,
+    get,
 
-    deleteUser,
+    remove,
 
-    updateUser,
+    update,
 
-    createUser
+    create
 };

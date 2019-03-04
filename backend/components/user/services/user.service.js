@@ -1,26 +1,89 @@
-function getUsers() {
+const Lesson = require("../../lesson/models/lesson.model");
+const User = require("../models/user.model");
 
+function list(payload, callback) {
+    return User.UserModel
+        .find({})
+        .populate('comments')
+        .populate('students')
+        .populate('teachers')
+        .populate('lessons')
+        .exec()
+        .then((users) => {
+            payload.users = users;
+            callback(null, payload);
+        })
+        .catch((err) => {
+            callback(err);
+        });
 }
 
-function getUser(payload) {
+function create(payload, callback) {
+    const newUser = new User.UserModel(payload.req.body);
 
+    return newUser
+        .save()
+        .then((newUser) => {
+            payload.newUser = newUser;
+            callback(null, payload);
+        })
+        .catch((err) => {
+            callback(err);
+        });
 }
 
-function deleteUser(payload) {
-
+function get(payload, callback) {
+    User.UserModel
+        .findOne(payload.query)
+        .populate('comments')
+        .populate('students')
+        .populate('teachers')
+        .populate('lessons')
+        .exec()
+        .then((user) => {
+            payload.user = user;
+            callback(null, payload);
+        })
+        .catch((err) => {
+            callback(err);
+        });
 }
 
-function updateUser(payload) {
+function remove(payload, callback) {
+    return User.UserModel
+        .remove({_id: payload.req.params.userId})
+        .exec()
+        .then((removedUser) => {
+            payload.removedUser = removedUser;
+            callback(null, payload);
+        })
+        .catch((err) => {
+            callback(err);
+        });
+}
 
+function update(payload, callback) {
+    return User.UserModel
+        .findByIdAndUpdate({_id: payload.req.params.userId}, payload.req.body)
+        .exec()
+        .then((updatedUser) => {
+            payload.updatedUser = updatedUser;
+            callback(null, payload);
+        })
+        .catch((err) => {
+            callback(err);
+        });
 }
 
 
 module.exports = {
-    getUsers,
+    list,
 
-    getUser,
+    get,
 
-    deleteUser,
+    remove,
 
-    updateUser
+    update,
+
+    create
 };

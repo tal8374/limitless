@@ -5,12 +5,11 @@ const appHelper = require('../../../util/app');
 const teachingLocationController = require('../controllers/teaching-location.controller');
 
 router
-    .get(appHelper.createPath('user', 'teaching-location', false), teachingLocationController.getTeachingLocations);
+    .get(appHelper.createPath('user', 'teaching-location', false), teachingLocationController.list)
+    .post(appHelper.createPath('user', 'teaching-location', false), teachingLocationController.create);
 
 router
-    .get(appHelper.createPath('user', 'teaching-location', true), teachingLocationController.getTeachingLocation)
-    .put(appHelper.createPath('user', 'teaching-location', true), teachingLocationController.updateTeachingLocation)
-    .post(appHelper.createPath('user', 'teaching-location', true), teachingLocationController.createTeachingLocation)
-    .delete(appHelper.createPath('user', 'teaching-location', true), teachingLocationController.updateTeachingLocation);
+    .put(appHelper.createPath('user', 'teaching-location', true), teachingLocationController.update)
+    .delete(appHelper.createPath('user', 'teaching-location', true), teachingLocationController.remove);
 
 module.exports = router;

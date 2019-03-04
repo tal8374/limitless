@@ -1,33 +1,68 @@
 const commentService = require('../services/comment.service');
+const async = require('async');
 
-function getComment(req, res) {
-    res.send(req.params)
+function list(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        commentService.list
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.userComments)
+    });
 }
 
-function getComments(req, res) {
-    res.send('hey');
+function create(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        commentService.create
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.newComment)
+    });
 }
 
-function createComment(req, res) {
-
+function remove(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        commentService.remove
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.removedComment)
+    });
 }
 
-function deleteComment(req, res) {
-
-}
-
-function updateComment(req, res) {
-
+function update(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        commentService.update
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.updatedComment)
+    });
 }
 
 module.exports = {
-    getComment,
+    list,
 
-    getComments,
+    create,
 
-    createComment,
+    remove,
 
-    deleteComment,
-
-    updateComment
+    update
 };
