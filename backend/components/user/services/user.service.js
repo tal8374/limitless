@@ -8,6 +8,7 @@ function list(payload, callback) {
         .populate('students')
         .populate('teachers')
         .populate('lessons')
+        .populate('messages')
         .exec()
         .then((users) => {
             payload.users = users;
@@ -39,6 +40,7 @@ function get(payload, callback) {
         .populate('students')
         .populate('teachers')
         .populate('lessons')
+        .populate('messages')
         .exec()
         .then((user) => {
             payload.user = user;

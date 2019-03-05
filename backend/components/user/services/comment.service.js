@@ -1,5 +1,5 @@
 const Comment = require("../../comment/models/comment.model");
-const userService = require('../services/user.service');
+const userService = require('./user.service');
 const commentService = require('../../comment/services/comment.service');
 const async = require('async');
 
@@ -37,71 +37,12 @@ function list(payload, callback) {
     });
 }
 
-function createSearchForUserQuery(payload, callback) {
-    payload.query = {_id: payload.req.body.for};
-
-    callback(null, payload);
-}
-
-function updateForUser(payload, callback) {
-    payload.req.body.for = payload.user;
-
-    callback(null, payload);
-}
-
-function populateForUser(payload, callback) {
-    async.waterfall([
-        function (callback) {
-            callback(null, payload);
-        },
-        createSearchForUserQuery,
-        userService.get,
-        updateForUser
-    ], function (err, result) {
-        if (err) {
-            callback(err)
-        }
-        payload.for = result.user;
-
-        callback(null, payload);
-    });
-}
-
-function createSearchByUserQuery(payload, callback) {
-    payload.query = {_id: payload.req.body.by};
-
-    callback(null, payload);
-}
-
-function updateByUser(payload, callback) {
-    payload.req.body.by = payload.user;
-
-    callback(null, payload);
-}
-
-function populateByUser(payload, callback) {
-    async.waterfall([
-        function (callback) {
-            callback(null, payload);
-        },
-        createSearchByUserQuery,
-        userService.get,
-        updateByUser,
-    ], function (err, result) {
-        if (err) {
-            callback(err)
-        }
-        payload.by = result.user;
-        callback(null, payload);
-    });
-}
 
 function addCommentToUser(payload, callback) {
     const user = payload.for;
     const newComment = payload.newComment;
 
     user.comments.push(newComment._id);
-
 
     return user
         .save()
@@ -118,8 +59,6 @@ function create(payload, callback) {
         function (callback) {
             callback(null, payload);
         },
-        populateForUser,
-        populateByUser,
         commentService.create,
         addCommentToUser
     ], function (err, result) {
@@ -131,13 +70,26 @@ function create(payload, callback) {
     });
 }
 
+function removeComment(payload, callback) {
+    Comment.CommentModel
+        .remove(payload.query)
+        .exec()
+        .then((removedComment) => {
+            payload.removedComment = removedComment;
+            callback(null, payload)
+        })
+        .catch((err) => {
+            callback(err);
+        });
+}
+
 function remove(payload, callback) {
     async.waterfall([
         function (callback) {
             callback(null, payload);
         },
         createSearchForCommentQuery,
-        commentService.remove,
+        removeComment,
     ], function (err, result) {
         if (err) {
             callback(err)
@@ -152,13 +104,26 @@ function createSearchForCommentQuery(payload, callback) {
     callback(null, payload);
 }
 
+function updateComment(payload, callback) {
+    Comment.CommentModel
+        .findByIdAndUpdate(payload.query, payload.req.body)
+        .exec()
+        .then((updatedComment) => {
+            payload.updatedComment = updatedComment;
+            callback(null, payload)
+        })
+        .catch((err) => {
+            callback(err);
+        });
+}
+
 function update(payload, callback) {
     async.waterfall([
         function (callback) {
             callback(null, payload);
         },
         createSearchForCommentQuery,
-        commentService.update,
+        updateComment
     ], function (err, result) {
         if (err) {
             callback(err)

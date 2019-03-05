@@ -15,6 +15,7 @@ const UserSchema = new Schema({
     role: [{type: 'String'}],
     photo: {type: 'String'},
     students: [{type: Schema.Types.ObjectId, ref: "User"}],
+    messages: [{type: Schema.Types.ObjectId, ref: "Message"}],
     teachers: [{type: Schema.Types.ObjectId, ref: "User"}],
     lessons: [{type: Schema.Types.ObjectId, ref: "Lesson"}],
     comments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}],

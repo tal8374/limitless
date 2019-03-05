@@ -1,20 +1,34 @@
 module.exports = {
     comment: {
-        dependency: 'user'
+        dependency: {
+            routeName: 'user',
+            moduleName: 'user'
+        }
     },
     "learning-location": {
-        dependency: 'user'
+        dependency: {
+            routeName: 'user',
+            moduleName: 'user'
+        }
     },
     student: {
-        dependency: 'user'
+        dependency: {
+            routeName: 'user',
+            moduleName: 'user'
+        }
     },
     teacher: {
-        dependency: 'user'
+        dependency: {
+            routeName: 'user',
+            moduleName: 'user'
+        }
     },
     "teaching-location": {
-        dependency: 'user'
+        dependency: {
+            routeName: 'user',
+            moduleName: 'user'
+        }
     },
     user: {
-        dependency: null
     },
 };

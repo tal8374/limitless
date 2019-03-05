@@ -48,24 +48,6 @@ function updateForUser(payload, callback) {
     callback(null, payload);
 }
 
-function populateForUser(payload, callback) {
-    async.waterfall([
-        function (callback) {
-            callback(null, payload);
-        },
-        createSearchForUserQuery,
-        userService.get,
-        updateForUser
-    ], function (err, result) {
-        if (err) {
-            callback(err)
-        }
-        payload.for = result.user;
-
-        callback(null, payload);
-    });
-}
-
 function createUserQuery(payload, callback) {
     payload.query = {_id: payload.req.params.userId};
 
