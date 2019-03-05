@@ -1,5 +1,8 @@
 module.exports = {
     message: {
-        dependency: null
+        dependency: {
+            routeName: 'user',
+            moduleName: 'user'
+        }
     },
 };

@@ -1,32 +1,54 @@
-function getMessage(req, res) {
-    res.send(req.params)
+const messageService = require('../services/message.service');
+const async = require('async');
+
+function list(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        messageService.list
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.userMessages)
+    });
 }
 
-function getMessages(req, res) {
-    res.send('hey')
-
+function create(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        messageService.create
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        } else if(!result.newMessage) {
+            res.send('error occured')
+        }
+        res.send(result.newMessage)
+    });
 }
 
-function createMessage(req, res) {
-
-}
-
-function deleteMessage(req, res) {
-
-}
-
-function updateMessage(req, res) {
-
+function update(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        messageService.update
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.updatedMessage)
+    });
 }
 
 module.exports = {
-    getMessage,
+    list,
 
-    getMessages,
+    create,
 
-    createMessage,
-
-    deleteMessage,
-
-    updateMessage
+    update,
 };
