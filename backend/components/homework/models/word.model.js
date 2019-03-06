@@ -7,4 +7,7 @@ const WordSchema = new Schema({
     partOfSpeech: {type: 'String', required: true},
 });
 
-module.exports = WordSchema;
+module.exports = {
+    WordModel: mongoose.model('Word', WordSchema),
+    WordSchema: WordSchema
+};

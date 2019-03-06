@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const EssaySchema = new Schema({
@@ -6,4 +6,7 @@ const EssaySchema = new Schema({
     remarks: {type: 'String', required: false}
 });
 
-module.exports = EssaySchema;
+module.exports = {
+    EssayModel: mongoose.model('Essay', EssaySchema),
+    EssaySchema: EssaySchema
+};

@@ -6,4 +6,7 @@ const SentenceSchema = new Schema({
     language: {type: 'String', required: true},
 });
 
-module.exports = SentenceSchema;
+module.exports = {
+    SentenceModel: mongoose.model('Sentence', SentenceSchema),
+    SentenceSchema: SentenceSchema
+};

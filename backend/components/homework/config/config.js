@@ -1,17 +1,28 @@
 module.exports = {
     essay: {
-        dependency: 'homework'
+        dependency: {
+            routeName: 'homework',
+            moduleName: 'homework'
+        }
     },
     grammar: {
-        dependency: 'homework'
+        dependency: {
+            routeName: 'homework',
+            moduleName: 'homework'
+        }
     },
     sentence: {
-        dependency: 'homework'
+        dependency: {
+            routeName: 'homework',
+            moduleName: 'homework'
+        }
     },
     word: {
-        dependency: 'homework'
+        dependency: {
+            routeName: 'homework',
+            moduleName: 'homework'
+        }
     },
     homework: {
-        dependency: null
     },
 };
