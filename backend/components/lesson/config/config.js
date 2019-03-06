@@ -1,8 +1,32 @@
 module.exports = {
     lesson: {
-        dependency: null
+        dependency: {
+            routeName: 'user',
+            moduleName: 'user'
+        }
     },
     cancellation: {
-        dependency: "lesson"
+        dependency: {
+            routeName: 'lesson',
+            moduleName: 'lesson'
+        }
+    },
+    comment: {
+        dependency: {
+            routeName: 'lesson',
+            moduleName: 'lesson'
+        }
+    },
+    homework: {
+        dependency: {
+            routeName: 'lesson',
+            moduleName: 'lesson'
+        }
+    },
+    location: {
+        dependency: {
+            routeName: 'lesson',
+            moduleName: 'lesson'
+        }
     },
 };

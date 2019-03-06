@@ -1,33 +1,68 @@
 const lessonService = require('../services/lesson.service');
+const async = require('async');
 
-function getLesson(req, res) {
-    res.send(req.params)
+function list(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        lessonService.list
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.userLessons)
+    });
 }
 
-function getLessons(req, res) {
-    res.send('hey')
+function create(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        lessonService.create
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.newLesson)
+    });
 }
 
-function createLesson(req, res) {
-
+function update(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        lessonService.update
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.updatedLesson)
+    });
 }
 
-function deleteLesson(req, res) {
-
-}
-
-function updateLesson(req, res) {
-
+function get(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        lessonService.get
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.lesson)
+    });
 }
 
 module.exports = {
-    getLesson,
+    list,
 
-    getLessons,
+    create,
 
-    createLesson,
+    update,
 
-    deleteLesson,
-
-    updateLesson
+    get
 };

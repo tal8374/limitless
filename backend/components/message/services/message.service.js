@@ -99,8 +99,6 @@ function addMessageToUser(payload, callback) {
     const user = payload.req.body.for;
     const newMessage = payload.newMessage;
 
-    console.log(payload.req.body)
-
     user.messages.push(newMessage._id);
 
     return user

@@ -1,23 +1,42 @@
 const commentService = require('../services/comment.service');
 
-function getComment(req, res) {
-    res.send(req.params)
+async function getComment(req, res) {
+    const payload = {
+        _id: req.params.commentId
+    };
+
+    const result = await commentService.getComment(payload);
+
+    res.send(result)
 }
 
-function getComments(req, res) {
-    res.send('hello')
+async function getComments(req, res) {
+    const comments = await commentService.getComments(req.body);
+
+    res.send(comments)
 }
 
-function createComment(req, res) {
+async function createComment(req, res) {
+    const result = await commentService.createComment(req.body);
 
+    res.send(result)
 }
 
-function deleteComment(req, res) {
+async function deleteComment(req, res) {
+    const result = await commentService.deleteComment(req.body);
 
+    res.send(result)
 }
 
-function updateComment(req, res) {
+async function updateComment(req, res) {
+    const payload = {
+        _id: req.params.commentId,
+        ...req.body
+    };
 
+    const result = await commentService.updateComment(payload);
+
+    res.send(result)
 }
 
 module.exports = {

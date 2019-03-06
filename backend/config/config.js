@@ -3,4 +3,5 @@ module.exports = {
     routesDirectory: "routes",
     configFile: "config",
     configDirectory: "config",
+    mongooseLocalURL: 'mongodb://localhost:27017/limitless',
 };

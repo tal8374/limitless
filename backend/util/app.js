@@ -11,7 +11,6 @@ function startRoutes(app) {
             moduleRouteFilePath = moduleRouteFilePath.replace('.js', '');
 
             app.use('', require(moduleRouteFilePath));
-
         });
     })
 }
@@ -22,22 +21,26 @@ function createPath(moduleName, routeName, isWithId) {
     const moduleConfig = require(moduleConfigPath);
     const dependency = moduleConfig[routeName].dependency;
 
-    if (dependency) {
-        return handleCreatePathWithDependency(moduleName, dependency, isWithId, routeName);
+    if (hasDependency(dependency)) {
+        return handleCreatePathWithDependency(moduleName, routeName, dependency, isWithId);
     } else {
-        return handleCreatePathWithoutDependency(moduleName, dependency, isWithId, routeName)
+        return handleCreatePathWithoutDependency(moduleName, routeName, isWithId)
     }
 }
 
-function handleCreatePathWithDependency(moduleName, dependency, isWithId, routeName) {
-    const dependencyPath = createPath(moduleName, dependency, true);
+function hasDependency(dependency) {
+    return dependency !== undefined;
+}
+
+function handleCreatePathWithDependency(moduleName, routeName, dependency, isWithId) {
+    const dependencyPath = createPath(dependency.moduleName, dependency.routeName, true);
     const url = dependencyPath + '/';
     const id = createModuleId(routeName);
 
     return isWithId ? url + routeName + '/:' + id : url + routeName;
 }
 
-function handleCreatePathWithoutDependency(moduleName, dependency, isWithId, routeName) {
+function handleCreatePathWithoutDependency(moduleName, routeName, isWithId) {
     const id = '/:' + createModuleId(routeName);
 
     return isWithId ? '/' + routeName + id : '/' + routeName;
@@ -57,5 +60,5 @@ function createModuleId(routeName) {
 module.exports = {
     startRoutes,
 
-    createPath
+    createPath,
 };

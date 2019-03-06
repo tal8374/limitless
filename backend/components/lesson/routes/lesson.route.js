@@ -5,12 +5,11 @@ const appHelper = require('../../../util/app');
 const lessonController = require('../controllers/lesson.controller');
 
 router
-    .get(appHelper.createPath('lesson', 'lesson', false), lessonController.getLessons);
+    .get(appHelper.createPath('lesson', 'lesson', false), lessonController.list)
+    .post(appHelper.createPath('lesson', 'lesson', false), lessonController.create);
 
 router
-    .get(appHelper.createPath('lesson', 'lesson', true), lessonController.getLesson)
-    .put(appHelper.createPath('lesson', 'lesson', true), lessonController.updateLesson)
-    .post(appHelper.createPath('lesson', 'lesson', true), lessonController.createLesson)
-    .delete(appHelper.createPath('lesson', 'lesson', true), lessonController.deleteLesson);
+    .get(appHelper.createPath('lesson', 'lesson', true), lessonController.get)
+    .put(appHelper.createPath('lesson', 'lesson', true), lessonController.update);
 
 module.exports = router;

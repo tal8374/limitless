@@ -3,7 +3,7 @@ const router = express.Router();
 
 const appHelper = require('../../../util/app');
 const userController = require('../controllers/user.controller');
-console.log(appHelper.createPath('user', 'user', false))
+
 router
     .get(appHelper.createPath('user', 'user', false), userController.list)
     .post(appHelper.createPath('user', 'user', false), userController.create);

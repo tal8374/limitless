@@ -1,17 +1,18 @@
-const cancellationService = require('../services/cancellation.service');
+const homeworkService = require('../services/homework.service');
 const async = require('async');
+
 
 function create(req, res) {
     async.waterfall([
         function (callback) {
             callback(null, {req: req});
         },
-        cancellationService.create
+        homeworkService.create
     ], function (err, result) {
         if (err) {
             res.send(err)
         }
-        res.send(result.newCancellation)
+        res.send(result.newHomework)
     });
 }
 
@@ -20,12 +21,12 @@ function update(req, res) {
         function (callback) {
             callback(null, {req: req});
         },
-        cancellationService.update
+        homeworkService.update
     ], function (err, result) {
         if (err) {
             res.send(err)
         }
-        res.send(result.updatedCancellation)
+        res.send(result.updatedHomework)
     });
 }
 

@@ -5,12 +5,9 @@ const appHelper = require('../../../util/app');
 const cancellationController = require('../controllers/cancellation.controller');
 
 router
-    .get(appHelper.createPath('lesson', 'cancellation', false), cancellationController.getCancellations);
+    .post(appHelper.createPath('lesson', 'cancellation', false), cancellationController.create);
 
 router
-    .get(appHelper.createPath('lesson', 'cancellation', true), cancellationController.getCancellation)
-    .put(appHelper.createPath('lesson', 'cancellation', true), cancellationController.updateCancellation)
-    .post(appHelper.createPath('lesson', 'cancellation', true), cancellationController.createCancellation)
-    .delete(appHelper.createPath('lesson', 'cancellation', true), cancellationController.deleteCancellation);
+    .put(appHelper.createPath('lesson', 'cancellation', false), cancellationController.update);
 
 module.exports = router;

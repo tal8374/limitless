@@ -1,76 +1,90 @@
 const userService = require('../../user/services/user.service');
 const lessonService = require('../services/lesson.service');
+const Homework = require("../../homework/models/homework.model");
 const async = require('async');
 const _ = require('lodash');
 
-function createSearchTeacherQuery(payload, callback) {
-    payload.query = {_id: payload.req.body.teacher};
+function createSearchCreateByQuery(payload, callback) {
+    payload.query = {_id: payload.req.body.createdBy};
 
     callback(null, payload);
 }
 
-function updateTeacher(payload, callback) {
-    payload.req.body.teacher = payload.user;
+function updateCreatedBy(payload, callback) {
+    payload.req.body.createdBy = payload.user;
 
     callback(null, payload);
 }
 
-function populateTeacher(payload, callback) {
+function populateCreateBy(payload, callback) {
     async.waterfall([
         function (callback) {
             callback(null, payload);
         },
-        createSearchTeacherQuery,
+        createSearchCreateByQuery,
         userService.get,
-        updateTeacher
+        updateCreatedBy
     ], function (err, result) {
         if (err) {
             callback(err)
         }
-        payload.teacher = result.user;
 
         callback(null, payload);
     });
 }
 
-function createByQuery(payload, callback) {
-    payload.query = {_id: payload.req.body.by};
+function createSearchCreatedForQuery(payload, callback) {
+    payload.query = {_id: payload.req.body.createdFor};
 
     callback(null, payload);
 }
 
-function updateBy(payload, callback) {
-    payload.req.body.by = payload.user;
+function updateCreatedFor(payload, callback) {
+    payload.req.body.createdFor = payload.user;
 
     callback(null, payload);
 }
 
-function populateBy(payload, callback) {
+function populateCreatedFor(payload, callback) {
     async.waterfall([
         function (callback) {
             callback(null, payload);
         },
-        createByQuery,
+        createSearchCreatedForQuery,
         userService.get,
-        updateBy,
+        updateCreatedFor,
     ], function (err, result) {
         if (err) {
             callback(err)
         }
-        payload.student = result.user;
+
         callback(null, payload);
     });
 }
 
-function createCancellation(payload, callback) {
+function addHomeworkToLesson(payload, callback) {
+    const newHomework = payload.newHomework;
     const lesson = payload.lesson;
 
-    lesson.cancellation = payload.req.body;
+    lesson.homework = newHomework;
 
-    lesson
+    return lesson
         .save()
-        .then((newCancellation) => {
-            payload.newCancellation = newCancellation;
+        .then((homework) => {
+            callback(null, payload);
+        })
+        .catch((err) => {
+            callback(err);
+        });
+}
+
+function createHomework(payload, callback) {
+    const newLesson = new Homework.HomeworkModel(payload.req.body);
+
+    newLesson
+        .save()
+        .then((newHomework) => {
+            payload.newHomework = newHomework;
             callback(null, payload);
         })
         .catch((err) => {
@@ -84,8 +98,10 @@ function create(payload, callback) {
             callback(null, payload);
         },
         lessonService.get,
-        populateBy,
-        createCancellation,
+        populateCreateBy,
+        populateCreatedFor,
+        createHomework,
+        addHomeworkToLesson
     ], function (err, result) {
         if (err) {
             callback(err)
@@ -95,15 +111,15 @@ function create(payload, callback) {
     });
 }
 
-function updateCancellation(payload, callback) {
+function updateHomework(payload, callback) {
     const lesson = payload.lesson;
 
-    lesson.cancellation = _.merge(lesson.cancellation, payload.req.body);
+    lesson.homework = _.merge(lesson.homework, payload.req.body);
+    payload.updatedHomework = lesson.homework;
 
     lesson
         .save()
-        .then((updatedCancellation) => {
-            payload.updatedCancellation = updatedCancellation
+        .then((homework) => {
             callback(null, payload);
         })
         .catch((err) => {
@@ -117,7 +133,7 @@ function update(payload, callback) {
             callback(null, payload);
         },
         lessonService.get,
-        updateCancellation
+        updateHomework
     ], function (err, result) {
         if (err) {
             callback(err)
@@ -130,5 +146,5 @@ function update(payload, callback) {
 module.exports = {
     create,
 
-    update
+    update,
 };

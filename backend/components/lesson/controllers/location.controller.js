@@ -1,17 +1,18 @@
-const cancellationService = require('../services/cancellation.service');
+const locationService = require('../services/location.service');
 const async = require('async');
+
 
 function create(req, res) {
     async.waterfall([
         function (callback) {
             callback(null, {req: req});
         },
-        cancellationService.create
+        locationService.create
     ], function (err, result) {
         if (err) {
             res.send(err)
         }
-        res.send(result.newCancellation)
+        res.send(result.newLocation)
     });
 }
 
@@ -20,12 +21,12 @@ function update(req, res) {
         function (callback) {
             callback(null, {req: req});
         },
-        cancellationService.update
+        locationService.update
     ], function (err, result) {
         if (err) {
             res.send(err)
         }
-        res.send(result.updatedCancellation)
+        res.send(result.updatedLocation)
     });
 }
 

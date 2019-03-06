@@ -1,47 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0ddbf035-8d05-4e8f-9402-7de0dfc8b06d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/components/comment/config/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/lesson/config/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/location/config/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/message/config/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/user/config/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
+    <list default="true" id="0ddbf035-8d05-4e8f-9402-7de0dfc8b06d" name="Default Changelist" comment="Adding mongoose connection.">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/comment/models/comment.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/homework/controllers/homework.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/homework/models/grammar.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/homework/models/homework.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/homework/services/homework.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/lesson/controllers/homework.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/lesson/controllers/location.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/lesson/models/cancellation.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/lesson/models/lesson.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/lesson/routes/comment.route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/lesson/routes/homework.route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/lesson/routes/location.route.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/lesson/services/comment.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/lesson/services/homework.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/components/lesson/services/location.service.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/comment/controllers/comment.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/comment/controllers/comment.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/comment/model/comment.model.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/comment/routes/comment.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/comment/routes/comment.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/comment/services/comment.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/comment/services/comment.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/homework/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/homework/config/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/homework/controllers/todo.controller.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/homework/model/essay.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/homework/models/essay.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/homework/model/grammar.model.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/homework/model/sentence.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/homework/models/sentence.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/homework/model/todo.model.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/homework/model/word.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/homework/models/word.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/homework/routes/homework.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/homework/routes/homework.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/homework/services/todo.service.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/lesson/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/lesson/config/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/lesson/controllers/cancellation.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/lesson/controllers/cancellation.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/lesson/controllers/comment.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/lesson/controllers/comment.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/lesson/controllers/lesson.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/lesson/controllers/lesson.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/lesson/model/cancellation.model.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/lesson/model/lesson.model.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/lesson/routes/cancellation.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/lesson/routes/cancellation.route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/lesson/routes/lesson.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/lesson/routes/lesson.route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/location/controllers/location.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/location/controllers/location.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/location/routes/location.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/location/routes/location.route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/message/controllers/message.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/message/controllers/message.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/message/routes/message.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/message/routes/message.route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/todo/controllers/essay.controller.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/todo/model/essay.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/todo/model/grammar.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/todo/model/sentence.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/todo/model/todo.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/todo/model/word.model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/todo/routes/todo.route.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/user/controllers/comment.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/controllers/comment.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/user/controllers/learning-location.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/controllers/learning-location.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/user/controllers/lesson.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/controllers/lesson.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/user/controllers/student.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/controllers/student.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/user/controllers/teacher.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/controllers/teacher.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/user/controllers/teaching-location.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/controllers/teaching-location.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/user/controllers/user.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/controllers/user.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/user/routes/comment.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/routes/comment.route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/user/routes/learning-location.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/routes/learning-location.route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/user/routes/lesson.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/routes/lesson.route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/user/routes/student.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/routes/student.route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/user/routes/teacher.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/routes/teacher.route.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/user/routes/teaching-location.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/routes/teaching-location.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/lesson/services/cancellation.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/lesson/services/cancellation.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/lesson/services/lesson.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/lesson/services/lesson.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/location/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/location/config/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/location/model/location.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/location/models/location.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/message/services/message.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/message/services/message.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/todo/controllers/comment.controller.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/components/user/routes/user.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/routes/user.route.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/util/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/util/app.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -53,163 +61,53 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="525323966">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.22" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="js" value="10" />
-          <entry key="json" value="2" />
-          <entry key="pug" value="1" />
-          <entry key="www" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JSON" value="2" />
-          <entry key="Jade" value="1" />
-          <entry key="JavaScript" value="13" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="js" value="444" />
-          <entry key="www" value="30" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JavaScript" value="474" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1001769110">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.15" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="js" value="5" />
-          <entry key="pug" value="1" />
-          <entry key="www" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="Jade" value="1" />
-          <entry key="JavaScript" value="7" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="js" value="281" />
-          <entry key="txt" value="32" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JavaScript" value="281" />
-          <entry key="PLAIN_TEXT" value="32" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="-1992804804">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.open.time.12" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="js" value="217" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JavaScript" value="217" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="js" value="4641" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JavaScript" value="4641" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/user/routes/student.route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/util/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="5" selection-start-line="5" selection-end-line="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/comment/routes/comment.route.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="88" selection-start-line="7" selection-start-column="88" selection-end-line="7" selection-end-column="88" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/comment/controllers/comment.controller.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>onListening</find>
-      <find>views</find>
-      <find>port</find>
-      <find>console</find>
+      <find>createLessonQuery</find>
+      <find>createCancellation</find>
+      <find>then</find>
+      <find>commentService</find>
+      <find>userService</find>
+      <find>userser</find>
+      <find>createSearchForCommentQuery</find>
+      <find>comment</find>
+      <find>h</find>
+      <find>createComment</find>
+      <find>addCommentToLesson</find>
+      <find>remove</find>
+      <find>lesson</find>
       <find>console.log</find>
-      <find>console.lo</find>
+      <find>createSearchCreateByQuery</find>
+      <find>updateCreatedBy</find>
+      <find>populateCreateBy</find>
+      <find>updateCreatedFor</find>
+      <find>populateCreatedFor</find>
+      <find>Homework</find>
+      <find>createHomework</find>
+      <find>home</find>
+      <find>addHomeworkToStudent</find>
+      <find>addHomeworkToLesson</find>
+      <find>_.mer</find>
+      <find>_</find>
+      <find>homewo</find>
+      <find>commme</find>
+      <find>createLocation</find>
+      <find>addLocationToLesson</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Projects\learn-english\project\backend</dir>
+      <dir>D:\Projects\learn-english\limitless\backend\components\user</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -218,73 +116,59 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/components/todo/controllers/todo.controller.js" />
-        <option value="$PROJECT_DIR$/components/todo/controllers/word.controller.js" />
-        <option value="$PROJECT_DIR$/components/todo/services/word.service.js" />
-        <option value="$PROJECT_DIR$/components/todo/services/todo.service.js" />
-        <option value="$PROJECT_DIR$/components/todo/services/sentence.service.js" />
-        <option value="$PROJECT_DIR$/components/todo/services/grammer.service.js" />
-        <option value="$PROJECT_DIR$/components/todo/services/essay.service.js" />
-        <option value="$PROJECT_DIR$/components/todo/routes/word.route.js" />
-        <option value="$PROJECT_DIR$/config/config.js" />
-        <option value="$PROJECT_DIR$/components/location/config/config.js" />
-        <option value="$PROJECT_DIR$/components/message/config/config.js" />
-        <option value="$PROJECT_DIR$/components/comment/config/config.js" />
-        <option value="$PROJECT_DIR$/components/todo/routes/grammar.route.js" />
-        <option value="$PROJECT_DIR$/components/todo/routes/sentence.route.js" />
-        <option value="$PROJECT_DIR$/components/todo/routes/essay.route.js" />
-        <option value="$PROJECT_DIR$/components/todo/routes/todo.route.js" />
-        <option value="$PROJECT_DIR$/components/todo/config/config.js" />
-        <option value="$PROJECT_DIR$/components/task/config/config.js" />
-        <option value="$PROJECT_DIR$/components/homework/config/config.js" />
-        <option value="$PROJECT_DIR$/components/user/config/config.js" />
-        <option value="$PROJECT_DIR$/components/message/controllers/message.controller.js" />
-        <option value="$PROJECT_DIR$/components/homework/routes/word.route.js" />
-        <option value="$PROJECT_DIR$/components/homework/routes/sentence.route.js" />
-        <option value="$PROJECT_DIR$/components/homework/routes/homework.route.js" />
-        <option value="$PROJECT_DIR$/components/homework/routes/grammar.route.js" />
-        <option value="$PROJECT_DIR$/components/homework/routes/essay.route.js" />
-        <option value="$PROJECT_DIR$/components/user/routes/user.route.js" />
-        <option value="$PROJECT_DIR$/components/user/routes/teaching-location.route.js" />
-        <option value="$PROJECT_DIR$/components/user/controllers/user.controller.js" />
-        <option value="$PROJECT_DIR$/components/user/controllers/teaching-location.controller.js" />
-        <option value="$PROJECT_DIR$/components/user/routes/teacher.route.js" />
-        <option value="$PROJECT_DIR$/components/user/controllers/teacher.controller.js" />
-        <option value="$PROJECT_DIR$/components/user/controllers/student.controller.js" />
         <option value="$PROJECT_DIR$/components/user/routes/lesson.route.js" />
         <option value="$PROJECT_DIR$/components/user/controllers/lesson.controller.js" />
+        <option value="$PROJECT_DIR$/components/user/services/lesson.service.js" />
+        <option value="$PROJECT_DIR$/tmp.js" />
+        <option value="$PROJECT_DIR$/components/user/controllers/student.controller.js" />
+        <option value="$PROJECT_DIR$/components/user/controllers/teacher.controller.js" />
+        <option value="$PROJECT_DIR$/components/user/services/teacher.service.js" />
+        <option value="$PROJECT_DIR$/components/user/services/student.service.js" />
+        <option value="$PROJECT_DIR$/components/message/config/config.js" />
+        <option value="$PROJECT_DIR$/components/comment/config/config.js" />
+        <option value="$PROJECT_DIR$/components/homework/config/config.js" />
+        <option value="$PROJECT_DIR$/components/location/config/config.js" />
+        <option value="$PROJECT_DIR$/components/user/routes/teaching-location.route.js" />
+        <option value="$PROJECT_DIR$/components/user/routes/teacher.route.js" />
+        <option value="$PROJECT_DIR$/components/user/routes/student.route.js" />
         <option value="$PROJECT_DIR$/components/user/routes/learning-location.route.js" />
-        <option value="$PROJECT_DIR$/components/user/controllers/learning-location.controller.js" />
+        <option value="$PROJECT_DIR$/components/user/config/config.js" />
         <option value="$PROJECT_DIR$/components/user/routes/comment.route.js" />
-        <option value="$PROJECT_DIR$/components/user/controllers/comment.controller.js" />
+        <option value="$PROJECT_DIR$/components/message/models/message.model.js" />
+        <option value="$PROJECT_DIR$/components/user/models/user.model.js" />
         <option value="$PROJECT_DIR$/components/message/routes/message.route.js" />
-        <option value="$PROJECT_DIR$/components/location/routes/location.route.js" />
-        <option value="$PROJECT_DIR$/components/location/controllers/location.controller.js" />
+        <option value="$PROJECT_DIR$/components/message/controllers/message.controller.js" />
         <option value="$PROJECT_DIR$/components/lesson/config/config.js" />
-        <option value="$PROJECT_DIR$/components/lesson/controllers/lesson.controller.js" />
+        <option value="$PROJECT_DIR$/components/lesson/models/cancellation.model.js" />
         <option value="$PROJECT_DIR$/components/lesson/routes/lesson.route.js" />
         <option value="$PROJECT_DIR$/components/lesson/routes/cancellation.route.js" />
         <option value="$PROJECT_DIR$/components/lesson/controllers/cancellation.controller.js" />
-        <option value="$PROJECT_DIR$/components/user/routes/student.route.js" />
-        <option value="$PROJECT_DIR$/components/comment/routes/comment.route.js" />
-        <option value="$PROJECT_DIR$/components/comment/controllers/comment.controller.js" />
+        <option value="$PROJECT_DIR$/components/user/controllers/comment.controller.js" />
         <option value="$PROJECT_DIR$/util/app.js" />
+        <option value="$PROJECT_DIR$/components/user/services/comment.service.js" />
+        <option value="$PROJECT_DIR$/components/lesson/models/lesson.model.js" />
+        <option value="$PROJECT_DIR$/components/lesson/routes/comment.route.js" />
+        <option value="$PROJECT_DIR$/components/lesson/services/comment.service.js" />
+        <option value="$PROJECT_DIR$/components/lesson/controllers/comment.controller.js" />
+        <option value="$PROJECT_DIR$/components/lesson/controllers/lesson.controller.js" />
+        <option value="$PROJECT_DIR$/components/lesson/services/homeowork.service.js" />
+        <option value="$PROJECT_DIR$/components/lesson/controllers/homeowork.controller.js" />
+        <option value="$PROJECT_DIR$/components/message/services/message.service.js" />
+        <option value="$PROJECT_DIR$/components/user/routes/user.route.js" />
+        <option value="$PROJECT_DIR$/components/user/services/user.service.js" />
+        <option value="$PROJECT_DIR$/components/lesson/services/cancellation.service.js" />
+        <option value="$PROJECT_DIR$/components/comment/services/comment.service.js" />
+        <option value="$PROJECT_DIR$/components/homework/models/homework.model.js" />
+        <option value="$PROJECT_DIR$/components/lesson/services/lesson.service.js" />
+        <option value="$PROJECT_DIR$/components/lesson/routes/homework.route.js" />
+        <option value="$PROJECT_DIR$/components/lesson/controllers/homework.controller.js" />
+        <option value="$PROJECT_DIR$/components/lesson/services/homework.service.js" />
+        <option value="$PROJECT_DIR$/components/lesson/routes/location.route.js" />
+        <option value="$PROJECT_DIR$/components/lesson/controllers/location.controller.js" />
+        <option value="$PROJECT_DIR$/components/location/models/location.model.js" />
+        <option value="$PROJECT_DIR$/components/lesson/services/location.service.js" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/node_modules" />
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/package.json" />
-    </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="170" />
@@ -307,11 +191,6 @@
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="bin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -324,8 +203,7 @@
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="comment" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="homework" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
@@ -340,21 +218,26 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.12.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="js.last.introduce.type" value="LET" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\learn-english\limitless\backend\components\user\services" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projects\learn-english\limitless\backend\components\todo" />
-      <recent name="D:\Projects\learn-english\limitless\backend\components\todo\controllers" />
-      <recent name="D:\Projects\learn-english\limitless\backend\components\user" />
-      <recent name="D:\Projects\learn-english\limitless\backend\components\message" />
-      <recent name="D:\Projects\learn-english\limitless\backend\components\location" />
+      <recent name="D:\Projects\learn-english\limitless\backend\components\comment\services" />
+      <recent name="D:\Projects\learn-english\limitless\backend\components\lesson\models" />
+      <recent name="D:\Projects\learn-english\limitless\backend\components\lesson\routes" />
+      <recent name="D:\Projects\learn-english\limitless\backend\components\lesson\services" />
+      <recent name="D:\Projects\learn-english\limitless\backend\components\lesson\controllers" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -369,14 +252,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.app.js (1)">
-    <configuration name="app.js (1)" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/util">
+  <component name="RunManager" selected="Node.js.tmp.js">
+    <configuration name="app.js (1)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/util">
       <method v="2" />
     </configuration>
-    <configuration name="app.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
+    <configuration name="app.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="load_routes.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="load_routes.js" working-dir="$PROJECT_DIR$/bin">
+    <configuration name="load_routes.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="load_routes.js" working-dir="$PROJECT_DIR$/bin">
+      <method v="2" />
+    </configuration>
+    <configuration name="tmp.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/tmp.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <list>
@@ -384,9 +270,11 @@
       <item itemvalue="Node.js.load_routes.js" />
       <item itemvalue="Node.js.app.js" />
       <item itemvalue="Node.js.app.js (1)" />
+      <item itemvalue="Node.js.tmp.js" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.tmp.js" />
         <item itemvalue="Node.js.app.js (1)" />
         <item itemvalue="Node.js.app.js" />
         <item itemvalue="Node.js.load_routes.js" />
@@ -407,6 +295,10 @@
       <workItem from="1549368912454" duration="4199000" />
       <workItem from="1550335997872" duration="25979000" />
       <workItem from="1550441102532" duration="3505000" />
+      <workItem from="1551361808934" duration="34078000" />
+      <workItem from="1551507748539" duration="52167000" />
+      <workItem from="1551705608415" duration="18377000" />
+      <workItem from="1551795785595" duration="12396000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1549372755859</created>
@@ -422,11 +314,46 @@
       <option name="project" value="LOCAL" />
       <updated>1549372797028</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Adding mongoose connection.">
+      <created>1551362014696</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1551362014696</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Implementing user module (controller, route, service)">
+      <created>1551702818719</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1551702818719</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Creating general rest api with dependence on other modules.">
+      <created>1551777040517</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1551777040518</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Implementing message module.">
+      <created>1551782181275</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1551782181275</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Putting comment service common logic in comment module.">
+      <created>1551801305090</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1551801305090</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38611000" />
+    <option name="totallyTimeSpent" value="160860000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -439,23 +366,23 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="56" y="-6" width="1486" height="877" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24948311" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1778084" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3297587" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3994638" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32931727" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39892906" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3297587" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3297587" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32931727" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32931727" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -464,311 +391,361 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="." />
     <MESSAGE value="Starting routes automatically." />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting routes automatically." />
+    <MESSAGE value="Adding mongoose connection." />
+    <MESSAGE value="Implementing user module (controller, route, service)" />
+    <MESSAGE value="Creating general rest api with dependence on other modules." />
+    <MESSAGE value="Implementing message module." />
+    <MESSAGE value="Putting comment service common logic in comment module." />
+    <option name="LAST_COMMIT_MESSAGE" value="Putting comment service common logic in comment module." />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/components/todo/services/essay.service.js" />
-    <entry file="file://$PROJECT_DIR$/components/todo/controllers/todo.controller.js" />
     <entry file="file://$PROJECT_DIR$/config/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="4" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        <state relative-caret-position="51">
+          <caret line="3" column="4" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.12.0/core-modules/module.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2976">
-          <caret line="547" column="14" selection-start-line="547" selection-start-column="14" selection-end-line="547" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/location/config/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/message/config/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/comment/config/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="13" lean-forward="true" selection-start-line="1" selection-start-column="13" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="457" column="12" selection-start-line="457" selection-start-column="12" selection-end-line="457" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1151">
-          <caret line="216" column="6" selection-start-line="216" selection-start-column="6" selection-end-line="216" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/todo/routes/essay.route.js" />
-    <entry file="file://$PROJECT_DIR$/components/todo/routes/grammar.route.js" />
-    <entry file="file://$PROJECT_DIR$/components/todo/routes/sentence.route.js" />
-    <entry file="file://$PROJECT_DIR$/components/todo/routes/word.route.js" />
-    <entry file="file://$PROJECT_DIR$/components/todo/routes/task.route.js" />
-    <entry file="file://$PROJECT_DIR$/components/todo/config/config.js" />
-    <entry file="file://$PROJECT_DIR$/components/task/config/config.js" />
-    <entry file="file://$PROJECT_DIR$/components/homework/config/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/config/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/message/services/message.service.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/homework/routes/word.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-start-column="3" selection-end-line="12" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/homework/routes/sentence.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-start-column="3" selection-end-line="12" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/homework/routes/homework.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-start-column="3" selection-end-line="12" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/homework/routes/grammar.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-start-column="3" selection-end-line="12" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/homework/routes/essay.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-start-column="3" selection-end-line="12" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/routes/user.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="73" lean-forward="true" selection-start-line="13" selection-start-column="73" selection-end-line="13" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/controllers/user.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+        <state relative-caret-position="136">
+          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/user/routes/teaching-location.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="100" selection-start-line="7" selection-start-column="100" selection-end-line="7" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/controllers/teaching-location.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="23" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="57" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/user/routes/teacher.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="82" lean-forward="true" selection-start-line="6" selection-end-line="12" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/controllers/teacher.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/controllers/student.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/routes/lesson.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="81" lean-forward="true" selection-start-line="6" selection-end-line="13" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/controllers/lesson.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/routes/learning-location.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="102" lean-forward="true" selection-start-line="6" selection-end-line="13" selection-end-column="120" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/controllers/learning-location.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="17" selection-start-line="3" selection-start-column="17" selection-end-line="3" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/routes/comment.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="78" selection-start-line="6" selection-end-line="13" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/controllers/comment.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/message/controllers/message.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/message/routes/message.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/location/controllers/location.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/location/routes/location.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="87" selection-start-line="7" selection-start-column="87" selection-end-line="7" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/lesson/config/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/lesson/routes/lesson.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="9" lean-forward="true" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/lesson/controllers/lesson.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/lesson/routes/cancellation.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="92" selection-start-line="7" selection-start-column="92" selection-end-line="7" selection-end-column="92" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/lesson/controllers/cancellation.controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="47" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/user/routes/student.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="9" selection-start-line="7" selection-start-column="9" selection-end-line="7" selection-end-column="54" />
+          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/comment/routes/comment.route.js">
+    <entry file="file://$PROJECT_DIR$/components/user/routes/learning-location.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="88" selection-start-line="7" selection-start-column="88" selection-end-line="7" selection-end-column="88" />
+          <caret line="7" column="30" lean-forward="true" selection-start-line="7" selection-start-column="30" selection-end-line="7" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.12.0/core-modules/path.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="27" column="10" selection-start-line="27" selection-start-column="10" selection-end-line="27" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="509" column="18" selection-start-line="509" selection-start-column="18" selection-end-line="509" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/user/config/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-176">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/async/dist/async.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="965" column="31" selection-start-line="965" selection-start-column="31" selection-end-line="965" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/message/config/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="28" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/message/models/message.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="43" lean-forward="true" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="201" column="14" selection-start-line="201" selection-start-column="14" selection-end-line="201" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/user/services/learning-location.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="70" selection-start-line="70" selection-end-line="88" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/message/routes/message.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="81" lean-forward="true" selection-start-line="11" selection-start-column="81" selection-end-line="11" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/message/controllers/message.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="25" lean-forward="true" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/message/services/message.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="116" selection-start-line="116" selection-end-line="127" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/routes/lesson.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="78" lean-forward="true" selection-start-line="11" selection-start-column="78" selection-end-line="11" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/models/cancellation.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="51" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/models/comment.model.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/user/services/comment.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="121" column="8" lean-forward="true" selection-end-line="178" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/comment/controllers/comment.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        <state>
+          <caret column="63" selection-start-column="63" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/comment/config/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/comment/models/comment.model.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/user/routes/user.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="55" selection-start-line="5" selection-start-column="55" selection-end-line="5" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/util/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/user/controllers/comment.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" column="26" lean-forward="true" selection-start-line="22" selection-start-column="26" selection-end-line="22" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/user/services/comment.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="119" column="9" selection-start-line="119" selection-start-column="9" selection-end-line="119" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/config/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-119">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="4" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/user/routes/comment.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="79" selection-start-line="8" selection-start-column="79" selection-end-line="8" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/user/services/user.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="49" column="36" lean-forward="true" selection-start-line="49" selection-start-column="36" selection-end-line="49" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/routes/comment.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="9" lean-forward="true" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/comment/services/comment.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="140" column="23" selection-start-line="140" selection-start-column="23" selection-end-line="140" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/controllers/comment.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/controllers/lesson.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="54" column="9" lean-forward="true" selection-end-line="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/user/models/user.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/homework/models/homework.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="11" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/routes/homework.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/routes/location.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="62" selection-start-line="7" selection-start-column="62" selection-end-line="7" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/controllers/homework.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="53" lean-forward="true" selection-start-column="53" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/models/lesson.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/location/models/location.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="27" selection-start-line="6" selection-start-column="27" selection-end-line="6" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-261" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/controllers/location.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="28" column="39" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/controllers/cancellation.controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/routes/cancellation.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="89" selection-start-line="10" selection-start-column="89" selection-end-line="10" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/services/location.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="61" column="23" selection-start-line="61" selection-start-column="23" selection-end-line="61" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/services/lesson.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="181" column="33" lean-forward="true" selection-start-line="181" selection-start-column="33" selection-end-line="181" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/services/homework.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="149" selection-end-line="150" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/services/comment.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="108" column="9" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/lesson/services/cancellation.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" column="28" selection-end-line="134" />
         </state>
       </provider>
     </entry>
