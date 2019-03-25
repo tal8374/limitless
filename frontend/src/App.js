@@ -1,53 +1,43 @@
-import React, { Component } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
-// import { renderRoutes } from 'react-router-config';
-import Loadable from 'react-loadable';
-import './App.scss';
+import React, {Component} from 'react';
 
-const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
+import 'semantic-ui-css/semantic.min.css';
 
-// Containers
-const DefaultLayout = Loadable({
-  loader: () => import('./containers/DefaultLayout'),
-  loading
-});
-
-// Pages
-const Login = Loadable({
-  loader: () => import('./views/Pages/Login'),
-  loading
-});
-
-const Register = Loadable({
-  loader: () => import('./views/Pages/Register'),
-  loading
-});
-
-const Page404 = Loadable({
-  loader: () => import('./views/Pages/Page404'),
-  loading
-});
-
-const Page500 = Loadable({
-  loader: () => import('./views/Pages/Page500'),
-  loading
-});
+import './App.css';
+import HeaderContainer from './containers/header/header';
+import {BrowserRouter} from "react-router-dom";
+import Route from "react-router-dom/es/Route";
+import HomeContainer from "./containers/home/home";
+import ExercisesContainer from "./containers/excercises/excercises";
+import AboutUsContainer from "./containers/about-us/about-us";
+import TeachersContainer from "./containers/teachers/teachers";
+import AssignmentHelpContainer from "./containers/assignment-help/assignment-help";
+import MessagesContainer from "./containers/messages/messages";
+import UserTeachersContainer from "./containers/user-teachers/user-teachers";
+import UserStudentsContainer from "./containers/user-students/user-students";
+import UserSettingContainer from "./containers/user-setting/user-setting";
+import UserProfileContainer from "./containers/user-profile/user-profile";
 
 class App extends Component {
+    render() {
+        return (
 
-  render() {
-    return (
-      <HashRouter>
-          <Switch>
-            <Route exact path="/login" name="Login Page" component={Login} />
-            <Route exact path="/register" name="Register Page" component={Register} />
-            <Route exact path="/404" name="Page 404" component={Page404} />
-            <Route exact path="/500" name="Page 500" component={Page500} />
-            <Route path="/" name="Home" component={DefaultLayout} />
-          </Switch>
-      </HashRouter>
-    );
-  }
+            <BrowserRouter>
+                <HeaderContainer/>
+                <Route exact path='/' component={HomeContainer}/>
+                <Route exact path='/about-us' component={AboutUsContainer}/>
+                <Route exact path='/assignment-help' component={AssignmentHelpContainer}/>
+                <Route exact path='/exercises' component={ExercisesContainer}/>
+                <Route exact path='/teachers' component={TeachersContainer}/>
+                <Route exact path='/messages' component={MessagesContainer}/>
+                <Route exact path='/user-profile' component={UserProfileContainer}/>
+                <Route exact path='/user-teachers' component={UserTeachersContainer}/>
+                <Route exact path='/user-students' component={UserStudentsContainer}/>
+                <Route exact path='/user-setting' component={UserSettingContainer}/>
+            </BrowserRouter>
+
+
+        );
+    }
 }
 
 export default App;

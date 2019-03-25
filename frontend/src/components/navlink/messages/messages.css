@@ -1,0 +1,10 @@
+.messages {
+  color: white;
+  margin-top: 35px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.messages:hover {
+  color: #BEBFC1;
+}

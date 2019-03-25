@@ -1,0 +1,13 @@
+.user-logo {
+  height: 30px;
+  width: 30px;
+}
+
+.header {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}

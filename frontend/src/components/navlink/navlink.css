@@ -1,0 +1,15 @@
+.icon {
+    margin-right: 5px;
+}
+
+.link {
+    color: white;
+}
+
+.link:hover {
+    color: #BEBFC1;
+}
+
+.sign-up {
+    border: 1px dotted white;
+}
