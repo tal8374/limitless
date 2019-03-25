@@ -92,7 +92,7 @@ class Login extends Component {
                             <Icon name="help"/>
                             New to this site?&nbsp;
                             {/* eslint-disable-next-line */}
-                            <Link className="login-register" to='sign-up'>
+                            <Link className="login-register" to='register'>
                                 Register here
                             </Link>
                             &nbsp;instead.
