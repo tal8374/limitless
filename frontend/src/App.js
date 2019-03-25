@@ -16,6 +16,8 @@ import UserTeachersContainer from "./containers/user-teachers/user-teachers";
 import UserStudentsContainer from "./containers/user-students/user-students";
 import UserSettingContainer from "./containers/user-setting/user-setting";
 import UserProfileContainer from "./containers/user-profile/user-profile";
+import Login from "./components/login/login";
+import Register from "./components/register/register";
 
 class App extends Component {
     render() {
@@ -24,6 +26,8 @@ class App extends Component {
             <BrowserRouter>
                 <HeaderContainer/>
                 <Route exact path='/' component={HomeContainer}/>
+                <Route exact path='/login' component={Login}/>
+                <Route exact path='/register' component={Register}/>
                 <Route exact path='/about-us' component={AboutUsContainer}/>
                 <Route exact path='/assignment-help' component={AssignmentHelpContainer}/>
                 <Route exact path='/exercises' component={ExercisesContainer}/>

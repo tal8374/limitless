@@ -1,19 +1,19 @@
 import React from 'react';
 
-import './sign-in.css';
+import './login.css';
 import Icon from "semantic-ui-react/dist/commonjs/elements/Icon";
 import {Link} from "react-router-dom";
 
-const Messages = () => {
+const Login = () => {
     return (
-        <Link style={{marginRight:'10px'}} to="sign-in">
+        <Link style={{marginRight:'10px'}} to="login">
                                 <span className='link'>
                                     <Icon name='sign-in' size='large'/>
-                                    Sign In
+                                    Login
                                 </span>
         </Link>
     );
 };
 
-export default Messages;
+export default Login;
 
