@@ -8,7 +8,7 @@ import {BrowserRouter} from "react-router-dom";
 import Route from "react-router-dom/es/Route";
 import HomeContainer from "./containers/home/home";
 import ExercisesContainer from "./containers/excercises/excercises";
-import AboutUsContainer from "./containers/about-us/about-us";
+import AboutUsContainer from "./components/about-us/about-us";
 import TeachersContainer from "./containers/teachers/teachers";
 import AssignmentHelpContainer from "./containers/assignment-help/assignment-help";
 import MessagesContainer from "./containers/messages/messages";

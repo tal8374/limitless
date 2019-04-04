@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {Form, Icon, Message, Button} from 'semantic-ui-react';
+import {Form, Icon, Message, Button, Accordion, Checkbox} from 'semantic-ui-react';
 import StatusMessage from '../../components/status-message/status-message';
 import './register.css';
 import Grid from "semantic-ui-react/dist/commonjs/collections/Grid";
 import {Link} from "react-router-dom";
+import Label from "semantic-ui-react/dist/commonjs/elements/Label";
 
 export default class Register extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ export default class Register extends Component {
         const {firstName, email, password, checked} = this.state;
 
         let isFormValid = true;
-        if ( !firstName || !email || !this.validateEmail(email) || !password || !checked || password) {
+        if (!firstName || !email || !this.validateEmail(email) || !password || !checked || password) {
             isFormValid = false;
         }
         return isFormValid;
@@ -51,6 +52,18 @@ export default class Register extends Component {
 
     render() {
         let {isLoading, error} = this.props;
+
+        const panels = [
+            {
+                key: 'details',
+                title: 'Optional Details',
+                content: {
+                    as: Form.Input,
+                    label: 'Maiden Name',
+                    placeholder: 'Maiden Name',
+                },
+            },
+        ];
 
         const statusMessage = (
             <StatusMessage
@@ -99,16 +112,31 @@ export default class Register extends Component {
                                 value={this.state.password}
                                 onChange={this.handleChange}
                             />
-                            <Form.Checkbox
-                                inline
-                                required
-                                label="I agree to the terms and conditions"
-                                name="agreement"
-                                checked={this.state.checked}
-                                onChange={this.handleCheckbox}
-                            />
+                            <Accordion as={Form.Field} panels={panels}/>
+                            <Form.Field>
+                                <Label basic>Register as a:</Label>
+                                <Checkbox
+                                    style={{marginLeft: '5%', marginRight: '5%'}}
+                                    radio
+                                    label='teacher'
+                                    name='checkboxRadioGroup'
+                                    value='teacher'
+                                    checked={this.state.role === 'teacher'}
+                                    onChange={this.handleChange}
+                                />
+                                <Checkbox
+                                    radio
+                                    label='Student'
+                                    name='checkboxRadioGroup'
+                                    value='student'
+                                    checked={this.state.role === 'student'}
+                                    onChange={this.handleChange}
+                                />
+                            </Form.Field>
                             <Button
-                                color="blue"
+                                basic
+                                color="grey"
+                                fluid
                                 loading={isLoading}
                                 disabled={isLoading}
                                 onClick={this.handleSubmit}>
