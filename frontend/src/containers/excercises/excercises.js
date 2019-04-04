@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
-import ExercisesMenu from "../../components/excercises-menu/exercises-menu";
+import ExercisesMenu from "../../components/execises/menu/exercisesMenu";
 import Grid from "semantic-ui-react/dist/commonjs/collections/Grid";
-import Segment from "semantic-ui-react/dist/commonjs/elements/Segment";
-import Dictionary from "../../components/dictionary/dictionary";
-import Container from "react-bootstrap/Container";
-import Header from "semantic-ui-react/dist/commonjs/elements/Header";
+import Dictionary from "../../components/execises/dictionary/dictionary";
+import Content from "../../components/execises/content/content";
 
 class ExercisesContainer extends Component {
-
 
     render() {
         return (
@@ -17,19 +14,17 @@ class ExercisesContainer extends Component {
                 </Grid.Row>
 
                 <Grid.Row>
-                    <Grid.Column width={10}>
-                        <Container text >
-                           page content
-                        </Container>
+                    <Grid.Column width={11}>
+                        <Content/>
                     </Grid.Column>
-                    <Grid.Column width={3}>
+                    <Grid.Column width={5}>
                         <Dictionary/>
                     </Grid.Column>
                 </Grid.Row>
 
             </Grid>
-    );
+        );
     }
-    }
+}
 
-    export default ExercisesContainer;
+export default ExercisesContainer;
