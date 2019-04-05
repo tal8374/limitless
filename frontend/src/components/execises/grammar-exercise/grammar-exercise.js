@@ -3,11 +3,12 @@ import React, {Component} from 'react';
 import {Button, Header, Segment, Message} from 'semantic-ui-react'
 import Icon from "semantic-ui-react/dist/commonjs/elements/Icon";
 
-class WordsGame extends Component {
+class GrammarExercise extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
+            isGameRunning: false,
             correctWord: {
                 word: 'word',
                 partOfSpeech: 'V',
@@ -38,6 +39,9 @@ class WordsGame extends Component {
                 }
             ]
         };
+
+        this.startGame = this.startGame.bind(this);
+        this.stopGame = this.stopGame.bind(this);
     }
 
     isCorrectWord(word) {
@@ -157,17 +161,69 @@ class WordsGame extends Component {
         )
     }
 
+
+    getEnglishWordsGame() {
+        if (this.state.isGameRunning) {
+            return this.getRunningGameElement();
+        } else {
+            return this.getNotRunningGameElement();
+        }
+    }
+
+    getNotRunningGameElement() {
+        return (
+            <Button
+                basic
+                color="green"
+                fluid
+                onClick={this.startGame}>
+                Start Game
+            </Button>
+        )
+    }
+
+    getRunningGameElement() {
+        return (
+            <div>
+                <Button
+                    basic
+                    color="red"
+                    fluid
+                    onClick={this.stopGame}>
+                    Stop Game
+                </Button>
+
+                <Segment>
+                    {this.getStageMessage()}
+                    <Header as='h3' textAlign='center'>
+                        The definition for - {this.state.correctWord.word}:
+                    </Header>
+                    {this.getOptions()}
+                </Segment>
+            </div>
+        )
+    }
+
+
+    startGame() {
+        this.setState({isGameRunning: true});
+    }
+
+    stopGame() {
+        this.setState({isGameRunning: false});
+    }
+
     render() {
         return (
-            <Segment>
-                {this.getStageMessage()}
+            <Segment style={{marginLeft: '2%'}}>
                 <Header as='h3' textAlign='center'>
-                    The definition for - {this.state.correctWord.word}:
+                    Guess the definition
                 </Header>
-                {this.getOptions()}
+                {this.getEnglishWordsGame()}
             </Segment>
         )
     }
+
 }
 
-export default WordsGame;
+export default GrammarExercise;
