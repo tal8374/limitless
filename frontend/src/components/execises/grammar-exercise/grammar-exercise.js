@@ -5,10 +5,16 @@ import Icon from "semantic-ui-react/dist/commonjs/elements/Icon";
 
 class GrammarExercise extends Component {
 
+
+
     constructor(props) {
         super(props);
         this.state = {
             isGameRunning: false,
+            sentence: {
+                sentence: 'word1 word2 word3 word4',
+                language: 'eng'
+            },
             correctWord: {
                 word: 'word',
                 partOfSpeech: 'V',
@@ -53,7 +59,7 @@ class GrammarExercise extends Component {
     }
 
     getWordIcon(word) {
-        if(!this.hasAnswered()) {
+        if (!this.hasAnswered()) {
             return null;
         }
 
@@ -78,14 +84,14 @@ class GrammarExercise extends Component {
                     color="grey"
                     fluid
                     onClick={this.checkAnswer.bind(this, index, word)}>
-                {word.definition}
+                {word.word}
                 {this.getWordIcon(word)}
             </Button>
         ))
     }
 
     isCorrectResult(word) {
-        if(!word) {
+        if (!word) {
             return false;
         }
 
@@ -162,7 +168,7 @@ class GrammarExercise extends Component {
     }
 
 
-    getEnglishWordsGame() {
+    getGrammarExercise() {
         if (this.state.isGameRunning) {
             return this.getRunningGameElement();
         } else {
@@ -196,7 +202,7 @@ class GrammarExercise extends Component {
                 <Segment>
                     {this.getStageMessage()}
                     <Header as='h3' textAlign='center'>
-                        The definition for - {this.state.correctWord.word}:
+                        The Missing Word For - {this.state.sentence.sentence}:
                     </Header>
                     {this.getOptions()}
                 </Segment>
@@ -217,12 +223,13 @@ class GrammarExercise extends Component {
         return (
             <Segment style={{marginLeft: '2%'}}>
                 <Header as='h3' textAlign='center'>
-                    Guess the definition
+                    Complete The Sentence
                 </Header>
-                {this.getEnglishWordsGame()}
+                {this.getGrammarExercise()}
             </Segment>
         )
     }
+
 
 }
 

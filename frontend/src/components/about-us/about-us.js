@@ -3,13 +3,16 @@ import React, {Component} from 'react';
 import {Container, Header, Segment} from 'semantic-ui-react'
 
 import CommonQuestions from '../common-questions/common-questions';
+import SiteStatistics from "../../components/site-statistics/site-statistics";
 
 export default class AboutUsContainer extends Component {
 
     render() {
         return (
             <Segment>
+
                 <Container textAlign='justified'>
+                    <SiteStatistics/>
                     <Header as='h2'>About us</Header>
                     <p>
                         TeacherOn.com is a free website, trusted by thousands of students and teachers, throughout the
@@ -56,7 +59,7 @@ export default class AboutUsContainer extends Component {
                         You can expect continuous improvement in the software, quick action on your feedback, with
                         ever-increasing features and more chances for you to find teachers and teaching jobs.
                     </p>
-                    <CommonQuestions />
+                    <CommonQuestions/>
                 </Container>
             </Segment>
         )

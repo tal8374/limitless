@@ -5,7 +5,6 @@ import Icon from "semantic-ui-react/dist/commonjs/elements/Icon";
 
 class SentenceExercise extends Component {
 
-
     constructor(props) {
         super(props);
         this.state = {
@@ -58,7 +57,7 @@ class SentenceExercise extends Component {
     }
 
     getWordIcon(word) {
-        if(!this.hasAnswered()) {
+        if (!this.hasAnswered()) {
             return null;
         }
 
@@ -90,7 +89,7 @@ class SentenceExercise extends Component {
     }
 
     isCorrectResult(word) {
-        if(!word) {
+        if (!word) {
             return false;
         }
 
@@ -167,7 +166,7 @@ class SentenceExercise extends Component {
     }
 
 
-    getEnglishWordsGame() {
+    getSentenceExercise() {
         if (this.state.isGameRunning) {
             return this.getRunningGameElement();
         } else {
@@ -224,7 +223,7 @@ class SentenceExercise extends Component {
                 <Header as='h3' textAlign='center'>
                     Guess The Missing word
                 </Header>
-                {this.getEnglishWordsGame()}
+                {this.getSentenceExercise()}
             </Segment>
         )
     }
