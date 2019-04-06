@@ -7,7 +7,7 @@ import {Link} from "react-router-dom";
 
 const Messages = () => {
     return (
-        <Link style={{marginRight:'7px'}} to="messages">
+        <Link style={{marginRight:'7px'}} to="/messages">
             <NotificationBadge style={{marginTop: "5px"}} count={2} effect={Effect.SCALE}/>
 
             <span style={{marginLeft: "-1px"}} className='link messages'>

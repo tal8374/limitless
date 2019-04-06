@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
@@ -18,8 +19,10 @@
     "react-scripts": "2.1.8",
     "react-sidebar": "^3.0.2",
     "reactstrap": "^7.1.0",
+    "save": "^2.3.3",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.86.0"
+    "semantic-ui-react": "^0.86.0",
+    "shave": "^2.5.2"
   },
   "scripts": {
     "start": "react-scripts start",

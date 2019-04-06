@@ -13,6 +13,8 @@ import AboutUs from "./about-us/about-us";
 import Exercise from "./exercise/exercise";
 import Login from "./login/login";
 import Register from "./register/register";
+import Messages from "./messages/messages";
+import UserPersonalDropDown from "./personal-dropdown/personal-dropdown";
 
 class Navlink extends Component {
     render() {
@@ -33,11 +35,11 @@ class Navlink extends Component {
                         </Nav>
                         <Nav>
 
-                            <Login/>
-                            <Register/>
+                            {/*<Login/>*/}
+                            {/*<Register/>*/}
 
-                            {/*<Messages/>*/}
-                            {/*<UserPersonalDropDown/>*/}
+                            <Messages/>
+                            <UserPersonalDropDown/>
                         </Nav>
                     </Navbar.Collapse>
                 </Col>
