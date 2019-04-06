@@ -22,8 +22,8 @@ const events = [
     {
         'title': 'Birthday Party',
         'bgColor': '#afeeee',
-        'start':new Date(2019, 2, 26, 7, 0, 0),
-        'end': new Date(2019, 2, 26, 10, 30, 0)
+        'start':new Date(2019, 3, 6, 7, 0, 0),
+        'end': new Date(2019, 3, 6, 10, 30, 0)
     },
 ];
 

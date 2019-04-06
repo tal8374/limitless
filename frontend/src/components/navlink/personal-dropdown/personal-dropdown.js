@@ -15,11 +15,7 @@ const UserPersonalDropDown = () => {
                      }>
             <NavDropdown.Header className='header' href="#action/3.4">Signed up as name</NavDropdown.Header>
             <NavDropdown.Divider/>
-            <NavDropdown.Item><Link style={{color: 'black',textDecoration: 'none'}}  to="user-profile">Your profile</Link></NavDropdown.Item>
-            <NavDropdown.Item><Link style={{color: 'black',textDecoration: 'none'}} to="user-teachers">Your teachers</Link></NavDropdown.Item>
-            <NavDropdown.Item><Link style={{color: 'black',textDecoration: 'none'}}  to="user-students">Your students</Link></NavDropdown.Item>
-            <NavDropdown.Divider/>
-            <NavDropdown.Item><Link style={{color: 'black',textDecoration: 'none'}} to="user-setting">Setting</Link></NavDropdown.Item>
+            <NavDropdown.Item><Link style={{color: 'black',textDecoration: 'none'}} to="/profile">Your Profile</Link></NavDropdown.Item>
             <NavDropdown.Divider/>
             <NavDropdown.Item>Logout</NavDropdown.Item>
         </NavDropdown>

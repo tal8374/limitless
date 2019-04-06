@@ -11,17 +11,13 @@ import AboutUsContainer from "./components/about-us/about-us";
 import TeachersContainer from "./containers/teachers/teachers";
 import AssignmentHelpContainer from "./containers/assignment-help/assignment-help";
 import MessagesContainer from "./containers/messages/messages";
-import UserTeachersContainer from "./containers/user-teachers/user-teachers";
-import UserStudentsContainer from "./containers/user-students/user-students";
-import UserSettingContainer from "./containers/user-setting/user-setting";
-import UserProfileContainer from "./containers/user-profile/user-profile";
+import ProfileContainer from "./containers/profile/profile";
 import Login from "./components/login/login";
 import Register from "./components/register/register";
 
 class App extends Component {
     render() {
         return (
-
             <BrowserRouter>
                 <HeaderContainer/>
                 <Switch>
@@ -32,15 +28,10 @@ class App extends Component {
                     <Route exact path='/exercises' component={ExercisesContainer}/>
                     <Route exact path='/teachers' component={TeachersContainer}/>
                     <Route exact path='/messages' component={MessagesContainer}/>
-                    <Route exact path='/user-profile' component={UserProfileContainer}/>
-                    <Route exact path='/user-teachers' component={UserTeachersContainer}/>
-                    <Route exact path='/user-students' component={UserStudentsContainer}/>
-                    <Route exact path='/user-setting' component={UserSettingContainer}/>
+                    <Route exact path='/profile' component={ProfileContainer}/>
                     <Redirect from='*' to='/teachers'/>
                 </Switch>
             </BrowserRouter>
-
-
         );
     }
 }

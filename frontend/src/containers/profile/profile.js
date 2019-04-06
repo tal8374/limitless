@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 
-class ProfileContainer extends Component {
+import ProfileMenu from '../../components/profile/profile-menu/profile-menu';
+
+class UserProfileContainer extends Component {
     render() {
+
         return (
-            <div>
-                profile
-            </div>
+            <ProfileMenu/>
         );
     }
 }
 
-export default ProfileContainer;
+export default UserProfileContainer;
