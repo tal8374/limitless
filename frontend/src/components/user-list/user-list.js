@@ -3,7 +3,7 @@ import {Button, Icon, Image, Item, Label} from 'semantic-ui-react'
 
 const paragraph = <Image src='https://react.semantic-ui.com/images/wireframe/short-paragraph.png'/>
 
-const ItemExampleDivided = () => (
+const UsersList = () => (
     <Item.Group divided>
         <Item>
             <Item.Image src='https://react.semantic-ui.com/images/wireframe/image.png'/>
@@ -60,4 +60,4 @@ const ItemExampleDivided = () => (
     </Item.Group>
 )
 
-export default ItemExampleDivided
+export default UsersList

@@ -124,7 +124,6 @@ export default class Register extends Component {
                                 />
                             </Form.Field>
                             <Button
-                                basic
                                 color="grey"
                                 fluid
                                 onClick={this.handleSubmit}>

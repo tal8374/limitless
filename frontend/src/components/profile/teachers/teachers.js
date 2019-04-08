@@ -2,6 +2,16 @@ import React, {Component} from 'react';
 
 import './teachers.css';
 
+import {Item} from 'semantic-ui-react'
+import Teacher from "./teacher/teacher";
+
+const teachers = [
+    {lastLessonAt: new Date().toDateString(), numberOfLessons: 2},
+    {lastLessonAt: new Date().toDateString(), numberOfLessons: 2},
+    {lastLessonAt: new Date().toDateString(), numberOfLessons: 2},
+    {lastLessonAt: new Date().toDateString(), numberOfLessons: 2},
+];
+
 class Teachers extends Component {
 
     constructor(props) {
@@ -9,10 +19,18 @@ class Teachers extends Component {
         this.state = {};
     }
 
+    getTeachers() {
+        return teachers.map(currentTeacher => {
+            return <Teacher teacher={currentTeacher}/>
+        })
+    }
+
     render() {
 
         return (
-            <div>teachers</div>
+            <Item.Group divided>
+                {this.getTeachers()}
+            </Item.Group>
         );
     }
 }

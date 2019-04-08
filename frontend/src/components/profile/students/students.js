@@ -2,6 +2,16 @@ import React, {Component} from 'react';
 
 import './students.css';
 
+import {Item} from 'semantic-ui-react'
+import Student from "./student/student";
+
+const students = [
+    {lastLessonAt: new Date().toDateString(), numberOfLessons: 2},
+    {lastLessonAt: new Date().toDateString(), numberOfLessons: 2},
+    {lastLessonAt: new Date().toDateString(), numberOfLessons: 2},
+    {lastLessonAt: new Date().toDateString(), numberOfLessons: 2},
+];
+
 class Students extends Component {
 
     constructor(props) {
@@ -9,10 +19,18 @@ class Students extends Component {
         this.state = {};
     }
 
+    getStudents() {
+        return students.map(currentStudent => {
+            return <Student student={currentStudent}/>
+        })
+    }
+
     render() {
 
         return (
-            <div>students</div>
+            <Item.Group divided>
+                {this.getStudents()}
+            </Item.Group>
         );
     }
 }

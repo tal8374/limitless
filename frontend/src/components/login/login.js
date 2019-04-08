@@ -81,7 +81,6 @@ class Login extends Component {
                                 onChange={this.handleChange}
                             />
                             <Button
-                                basic
                                 color="grey"
                                 fluid
                                 loading={isLoading}

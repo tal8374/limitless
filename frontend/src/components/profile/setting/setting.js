@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import './setting.css';
-import {Label, Button, Header, Form, Input} from "semantic-ui-react";
+import {Header, Form} from "semantic-ui-react";
 
 class Setting extends Component {
 
