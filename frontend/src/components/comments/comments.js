@@ -1,73 +1,36 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {Button, Comment, Form, Header} from 'semantic-ui-react'
 
-const Comments = () => (
-    <Comment.Group>
-        <Header as='h3' dividing>
-            Comments
-        </Header>
+class Comments extends Component {
 
-        <Comment>
-            <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg'/>
-            <Comment.Content>
-                <Comment.Author as='a'>Matt</Comment.Author>
-                <Comment.Metadata>
-                    <div>Today at 5:42PM</div>
-                </Comment.Metadata>
-                <Comment.Text>How artistic!</Comment.Text>
-                <Comment.Actions>
-                    <Comment.Action>Reply</Comment.Action>
-                </Comment.Actions>
-            </Comment.Content>
-        </Comment>
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
 
-
-        <Comment>
-            <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/elliot.jpg'/>
-            <Comment.Content>
-                <Comment.Author as='a'>Elliot Fu</Comment.Author>
-                <Comment.Metadata>
-                    <div>Yesterday at 12:30AM</div>
-                </Comment.Metadata>
-                <Comment.Text>
-                    <p>This has been very useful for my research. Thanks as well!</p>
-                </Comment.Text>
-                <Comment.Actions>
-                    <Comment.Action>Reply</Comment.Action>
-                </Comment.Actions>
-            </Comment.Content>
+    render() {
+        return (
             <Comment.Group>
+                <Header as='h3' dividing>
+                    Last Comments
+                </Header>
+
                 <Comment>
-                    <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/jenny.jpg'/>
+                    <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/matt.jpg'/>
                     <Comment.Content>
-                        <Comment.Author as='a'>Jenny Hess</Comment.Author>
+                        <Comment.Author as='a'>Matt</Comment.Author>
                         <Comment.Metadata>
-                            <div>Just now</div>
+                            <div>Today at 5:42PM</div>
                         </Comment.Metadata>
-                        <Comment.Text>Elliot you are always so right :)</Comment.Text>
-                        <Comment.Actions>
-                            <Comment.Action>Reply</Comment.Action>
-                        </Comment.Actions>
+                        <Comment.Text>How artistic!</Comment.Text>
                     </Comment.Content>
                 </Comment>
-            </Comment.Group>
-        </Comment>
 
-        <Comment>
-            <Comment.Avatar src='https://react.semantic-ui.com/images/avatar/small/joe.jpg'/>
-            <Comment.Content>
-                <Comment.Author as='a'>Joe Henderson</Comment.Author>
-                <Comment.Metadata>
-                    <div>5 days ago</div>
-                </Comment.Metadata>
-                <Comment.Text>Dude, this is awesome. Thanks so much</Comment.Text>
-                <Comment.Actions>
-                    <Comment.Action>Reply</Comment.Action>
-                </Comment.Actions>
-            </Comment.Content>
-        </Comment>
-    </Comment.Group>
-)
+            </Comment.Group>
+        )
+    }
+
+}
 
 export default Comments
 

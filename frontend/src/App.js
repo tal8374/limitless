@@ -11,7 +11,7 @@ import AboutUsContainer from "./components/about-us/about-us";
 import TeachersContainer from "./containers/teachers/teachers";
 import AssignmentHelpContainer from "./containers/assignment-help/assignment-help";
 import MessagesContainer from "./containers/messages/messages";
-import ProfileContainer from "./containers/profile/profile";
+import AccountContainer from "./containers/account/account";
 import Login from "./components/login/login";
 import Register from "./components/register/register";
 
@@ -28,7 +28,7 @@ class App extends Component {
                     <Route exact path='/exercises' component={ExercisesContainer}/>
                     <Route exact path='/teachers' component={TeachersContainer}/>
                     <Route exact path='/messages' component={MessagesContainer}/>
-                    <Route exact path='/profile' component={ProfileContainer}/>
+                    <Route exact path='/account' component={AccountContainer}/>
                     <Redirect from='*' to='/teachers'/>
                 </Switch>
             </BrowserRouter>

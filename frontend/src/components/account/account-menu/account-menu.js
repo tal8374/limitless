@@ -6,8 +6,9 @@ import Calendar from '../calendar/calendar';
 import Teachers from '../teachers/teachers';
 import Students from '../students/students';
 import Setting from '../setting/setting';
+import Profile from "../../profile/profile";
 
-class ProfileMenu extends Component {
+class AccountMenu extends Component {
     state = {activeItem: 'calendar'};
 
     handleItemClick = (e, {name}) => this.setState({activeItem: name});
@@ -22,6 +23,8 @@ class ProfileMenu extends Component {
                 return <Students/>;
             case 'setting':
                 return <Setting/>;
+            case 'profile':
+                return <Profile/>;
         }
     }
 
@@ -33,6 +36,7 @@ class ProfileMenu extends Component {
             <Grid>
                 <Grid.Column width={2}>
                     <Menu fluid vertical tabular>
+                        <Menu.Item name='profile' active={activeItem === 'profile'} onClick={this.handleItemClick}/>
                         <Menu.Item name='calendar' active={activeItem === 'calendar'} onClick={this.handleItemClick}/>
                         <Menu.Item name='teachers' active={activeItem === 'teachers'} onClick={this.handleItemClick}/>
                         <Menu.Item name='students' active={activeItem === 'students'} onClick={this.handleItemClick}/>
@@ -42,7 +46,7 @@ class ProfileMenu extends Component {
 
                 <Grid.Column stretched width={14}>
                     <Segment>
-                        {this.getSegment()}
+                        <Profile/>
                     </Segment>
                 </Grid.Column>
             </Grid>
@@ -50,4 +54,4 @@ class ProfileMenu extends Component {
     }
 }
 
-export default ProfileMenu;
+export default AccountMenu;
