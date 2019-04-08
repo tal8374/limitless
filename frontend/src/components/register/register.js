@@ -13,16 +13,11 @@ export default class Register extends Component {
             firstName: '',
             email: '',
             password: '',
-            checked: true,
         };
     }
 
     handleChange = (e, {name, value}) => {
         this.setState({[name]: value});
-    };
-
-    handleCheckbox = () => {
-        this.setState({checked: !this.state.checked});
     };
 
     isFormValid = () => {
@@ -51,8 +46,6 @@ export default class Register extends Component {
     };
 
     render() {
-        let {isLoading, error} = this.props;
-
         const panels = [
             {
                 key: 'details',
@@ -67,9 +60,6 @@ export default class Register extends Component {
 
         const statusMessage = (
             <StatusMessage
-                error={error}
-                errorMessage={error || 'Login Error'}
-                loading={isLoading}
                 loadingMessage={'Registering your account'}
                 type="modal"
             />
@@ -137,8 +127,6 @@ export default class Register extends Component {
                                 basic
                                 color="grey"
                                 fluid
-                                loading={isLoading}
-                                disabled={isLoading}
                                 onClick={this.handleSubmit}>
                                 Submit
                             </Button>
