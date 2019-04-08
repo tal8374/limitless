@@ -1,0 +1,10 @@
+.login-form {
+    margin-top: 5%;
+    color: black;
+}
+
+.login-register {
+    color: blue;
+    cursor: pointer !important;
+    text-decoration: none;
+}
