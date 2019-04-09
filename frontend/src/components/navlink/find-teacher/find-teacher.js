@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 const FindTeacher = () => {
     return (
-        <Link to="/teachers">
+        <Link to="/teachers" style={{marginRight:'10px'}}>
                                 <span className='link'>
                                     <Icon name='users' size='large' />
                                     Find Teacher

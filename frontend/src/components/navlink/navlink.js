@@ -8,7 +8,6 @@ import './navlink.css';
 
 import Logo from "./logo/logo";
 import FindTeacher from "./find-teacher/find-teacher";
-import AssignmentHelp from "./assignment-help/assignment-help";
 import AboutUs from "./about-us/about-us";
 import Exercise from "./exercise/exercise";
 import Login from "./login/login";
@@ -28,7 +27,6 @@ class Navlink extends Component {
                         <Nav className="mr-auto">
 
                             <FindTeacher/>
-                            <AssignmentHelp/>
                             <Exercise/>
                             <AboutUs/>
 
