@@ -14,6 +14,7 @@ import MessagesContainer from "./containers/messages/messages";
 import AccountContainer from "./containers/account/account";
 import Login from "./components/login/login";
 import Register from "./components/register/register";
+import Profile from "./components/profile/profile";
 
 class App extends Component {
     render() {
@@ -29,6 +30,7 @@ class App extends Component {
                     <Route exact path='/teachers' component={TeachersContainer}/>
                     <Route exact path='/messages' component={MessagesContainer}/>
                     <Route exact path='/account' component={AccountContainer}/>
+                    <Route exact path='/profile/:userId' component={Profile}/>
                     <Redirect from='*' to='/teachers'/>
                 </Switch>
             </BrowserRouter>

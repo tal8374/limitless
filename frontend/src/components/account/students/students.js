@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import './students.css';
 
 import {Item} from 'semantic-ui-react'
-import Student from "./student/student";
+import Profile from "../../profile/profile";
 
 const students = [
     {lastLessonAt: new Date().toDateString(), numberOfLessons: 2},
@@ -21,7 +21,7 @@ class Students extends Component {
 
     getStudents() {
         return students.map(currentStudent => {
-            return <Student student={currentStudent}/>
+            return <Profile/>
         })
     }
 

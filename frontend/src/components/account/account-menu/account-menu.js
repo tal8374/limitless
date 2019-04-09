@@ -46,7 +46,7 @@ class AccountMenu extends Component {
 
                 <Grid.Column stretched width={14}>
                     <Segment>
-                        <Profile/>
+                        { this.getSegment() }
                     </Segment>
                 </Grid.Column>
             </Grid>
