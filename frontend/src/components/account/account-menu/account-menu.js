@@ -6,7 +6,7 @@ import Calendar from '../calendar/calendar';
 import Teachers from '../teachers/teachers';
 import Students from '../students/students';
 import Setting from '../setting/setting';
-import Profile from "../../profile/profile";
+import UserProfileContainer from "../../../containers/user-profile/user-profile";
 
 class AccountMenu extends Component {
     state = {activeItem: 'calendar'};
@@ -24,7 +24,7 @@ class AccountMenu extends Component {
             case 'setting':
                 return <Setting/>;
             case 'profile':
-                return <Profile/>;
+                return <UserProfileContainer showCalendar={false}/>;
         }
     }
 

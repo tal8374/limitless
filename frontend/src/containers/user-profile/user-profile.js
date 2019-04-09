@@ -63,11 +63,33 @@ const comments = [
 
 const comment = comments[0];
 
-for(let i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
     comments.push(comment);
 }
 
 class UserProfileContainer extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            showCalendar: props.showCalendar === false ? props.showCalendar : true
+        }
+    }
+
+    getCalendar() {
+        return !this.state.showCalendar ? null :
+            (
+                <Grid.Row>
+                    <Grid.Column width={1}/>
+                    <Grid.Column width={14}>
+                        <Calendar/>
+                    </Grid.Column>
+                    <Grid.Column width={1}/>
+                </Grid.Row>
+            )
+    }
+
     render() {
         return (
             <Segment>
@@ -83,13 +105,7 @@ class UserProfileContainer extends Component {
                         </Grid.Column>
                         <Grid.Column width={1}/>
                     </Grid.Row>
-                    <Grid.Row>
-                        <Grid.Column width={1}/>
-                        <Grid.Column width={14}>
-                            <Calendar/>
-                        </Grid.Column>
-                        <Grid.Column width={1}/>
-                    </Grid.Row>
+                    {this.getCalendar()}
                 </Grid>
             </Segment>
         );
