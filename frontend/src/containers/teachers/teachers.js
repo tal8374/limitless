@@ -220,9 +220,6 @@ class TeachersContainer extends Component {
     }
 
     handlePaginationChange(e, {activePage}) {
-        console.log("-----------")
-        // console.log(activePage)
-        // console.log(this.state.perPage)
         this.setState({activePage})
     }
 
@@ -263,7 +260,6 @@ class TeachersContainer extends Component {
                                             onPageChange={this.handlePaginationChange.bind(this)}
                                             siblingRange={1}
                                             totalPages={this.getNumberOfPages()}
-                                            // Heads up! All items are powered by shorthands, if you want to hide one of them, just pass `null` as value
                                             ellipsisItem={this.state.showEllipsis ? undefined : null}
                                             firstItem={this.state.showFirstAndLastNav ? undefined : null}
                                             lastItem={this.state.showFirstAndLastNav ? undefined : null}

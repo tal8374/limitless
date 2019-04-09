@@ -2,20 +2,41 @@ import React, {Component} from 'react';
 
 import {Button, Icon, Item, Label} from 'semantic-ui-react'
 import Rating from "react-rating";
+import {withRouter} from "react-router-dom";
 
-export default class Profile extends Component {
+class Profile extends Component {
 
     constructor(props) {
         super(props)
         this.state = {
-            user: props.user,
+            user: props.user ? props.user : {
+                key: '12',
+                firstName: '12',
+                lastName: 'last',
+                registeredAt: new Date,
+                phone: '0543534542',
+                email: 'email@gmail.com',
+                roles: ['teacher'],
+                dateOfBirth: new Date(),
+                photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3lIy5jnenOOIroabuRLT6i_DjzJoxU9mKSA8r-jKwtfQWanu',
+                from: {
+                    country: 'country',
+                    city: 'city',
+                    street: 'street',
+                }
+            },
             profile: props.profile
         }
     }
 
+    goToProfile() {
+        let path = '/profile/' + this.state.user.firstName;
+        this.props.history.push(path);
+    }
+
     render() {
         return (
-            <Item.Group divided>
+            <Item.Group divided onClick={this.goToProfile.bind(this)}>
                 <Item>
                     <Item.Image src='https://react.semantic-ui.com/images/wireframe/image.png'/>
 
@@ -55,3 +76,4 @@ export default class Profile extends Component {
     }
 }
 
+export default withRouter(Profile);

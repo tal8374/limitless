@@ -16,7 +16,7 @@ class Teachers extends Component {
 
         filtered = filtered.map((teacher) => (
             <Profile key={teacher.key} user={teacher} profile={'teacher'}/>
-            ))
+            ));
 
         console.log(filtered)
 
