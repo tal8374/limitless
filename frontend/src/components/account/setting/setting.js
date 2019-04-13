@@ -120,7 +120,6 @@ class Setting extends Component {
                 </Form.Group>
 
                 <Form.Button
-                    basic
                     color="grey"
                     fluid>
                     Update

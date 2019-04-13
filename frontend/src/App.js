@@ -15,25 +15,29 @@ import AccountContainer from "./containers/account/account";
 import Login from "./components/login/login";
 import Register from "./components/register/register";
 import UserProfileContainer from "./containers/user-profile/user-profile";
+import Provider from "react-redux/es/components/Provider";
+import store, {persistor} from './store';
 
 class App extends Component {
     render() {
         return (
-            <BrowserRouter>
-                <HeaderContainer/>
-                <Switch>
-                    <Route exact path='/login' component={Login}/>
-                    <Route exact path='/register' component={Register}/>
-                    <Route exact path='/about-us' component={AboutUsContainer}/>
-                    <Route exact path='/assignment-help' component={AssignmentHelpContainer}/>
-                    <Route exact path='/exercises' component={ExercisesContainer}/>
-                    <Route exact path='/teachers' component={TeachersContainer}/>
-                    <Route exact path='/messages' component={MessagesContainer}/>
-                    <Route exact path='/account' component={AccountContainer}/>
-                    <Route exact path='/profile/:userId' component={UserProfileContainer}/>
-                    <Redirect from='*' to='/teachers'/>
-                </Switch>
-            </BrowserRouter>
+            <Provider store={store}>
+                <BrowserRouter>
+                    <HeaderContainer/>
+                    <Switch>
+                        <Route exact path='/login' component={Login}/>
+                        <Route exact path='/register' component={Register}/>
+                        <Route exact path='/about-us' component={AboutUsContainer}/>
+                        <Route exact path='/assignment-help' component={AssignmentHelpContainer}/>
+                        <Route exact path='/exercises' component={ExercisesContainer}/>
+                        <Route exact path='/teachers' component={TeachersContainer}/>
+                        <Route exact path='/messages' component={MessagesContainer}/>
+                        <Route exact path='/account' component={AccountContainer}/>
+                        <Route exact path='/profile/:userId' component={UserProfileContainer}/>
+                        <Redirect from='*' to='/teachers'/>
+                    </Switch>
+                </BrowserRouter>
+            </Provider>
         );
     }
 }

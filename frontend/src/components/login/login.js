@@ -37,8 +37,6 @@ class Login extends Component {
 
     handleSubmit = e => {
         if (this.isFormValid()) {
-            console.log('logged in');
-            console.log(this.state);
         }
     };
 

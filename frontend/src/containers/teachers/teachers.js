@@ -3,203 +3,9 @@ import SearchTeachers from "../../components/search-teachers/search-teachers";
 import Teachers from "../../components/teachers/teachers";
 import {Pagination, Grid} from 'semantic-ui-react'
 import Comments from "../../components/comments/comments";
-
-
-const users = [
-    {
-        firstName: '1',
-        key: '1',
-        lastName: 'last',
-        registeredAt: new Date,
-        phone: '0543534542',
-        email: 'email@gmail.com',
-        roles: ['teacher'],
-        dateOfBirth: new Date(),
-        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3lIy5jnenOOIroabuRLT6i_DjzJoxU9mKSA8r-jKwtfQWanu',
-        from: {
-            country: 'country',
-            city: 'city',
-            street: 'street',
-        },
-    },
-    {
-        firstName: '2',
-        key: '2',
-        lastName: 'last',
-        registeredAt: new Date,
-        phone: '0543534542',
-        email: 'email@gmail.com',
-        roles: ['teacher'],
-        dateOfBirth: new Date(),
-        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3lIy5jnenOOIroabuRLT6i_DjzJoxU9mKSA8r-jKwtfQWanu',
-        from: {
-            country: 'country',
-            city: 'city',
-            street: 'street',
-        },
-    },
-    {
-        firstName: '3',
-        key: '3',
-        lastName: 'last',
-        registeredAt: new Date,
-        phone: '0543534542',
-        email: 'email@gmail.com',
-        roles: ['teacher'],
-        dateOfBirth: new Date(),
-        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3lIy5jnenOOIroabuRLT6i_DjzJoxU9mKSA8r-jKwtfQWanu',
-        from: {
-            country: 'country',
-            city: 'city',
-            street: 'street',
-        },
-    },
-    {
-        key: '4',
-        firstName: '4',
-        lastName: 'last',
-        registeredAt: new Date,
-        phone: '0543534542',
-        email: 'email@gmail.com',
-        roles: ['teacher'],
-        dateOfBirth: new Date(),
-        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3lIy5jnenOOIroabuRLT6i_DjzJoxU9mKSA8r-jKwtfQWanu',
-        from: {
-            country: 'country',
-            city: 'city',
-            street: 'street',
-        },
-    },
-    {
-        key: '5',
-        firstName: '5',
-        lastName: 'last',
-        registeredAt: new Date,
-        phone: '0543534542',
-        email: 'email@gmail.com',
-        roles: ['teacher'],
-        dateOfBirth: new Date(),
-        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3lIy5jnenOOIroabuRLT6i_DjzJoxU9mKSA8r-jKwtfQWanu',
-        from: {
-            country: 'country',
-            city: 'city',
-            street: 'street',
-        },
-    },
-    {
-        key: '6',
-        firstName: '6',
-        lastName: 'last',
-        registeredAt: new Date,
-        phone: '0543534542',
-        email: 'email@gmail.com',
-        roles: ['teacher'],
-        dateOfBirth: new Date(),
-        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3lIy5jnenOOIroabuRLT6i_DjzJoxU9mKSA8r-jKwtfQWanu',
-        from: {
-            country: 'country',
-            city: 'city',
-            street: 'street',
-        },
-    },
-    {
-        key: '7',
-        firstName: '7',
-        lastName: 'last',
-        registeredAt: new Date,
-        phone: '0543534542',
-        email: 'email@gmail.com',
-        roles: ['teacher'],
-        dateOfBirth: new Date(),
-        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3lIy5jnenOOIroabuRLT6i_DjzJoxU9mKSA8r-jKwtfQWanu',
-        from: {
-            country: 'country',
-            city: 'city',
-            street: 'street',
-        },
-    },
-    {
-        key: '8',
-        firstName: '8',
-        lastName: 'last',
-        registeredAt: new Date,
-        phone: '0543534542',
-        email: 'email@gmail.com',
-        roles: ['teacher'],
-        dateOfBirth: new Date(),
-        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3lIy5jnenOOIroabuRLT6i_DjzJoxU9mKSA8r-jKwtfQWanu',
-        from: {
-            country: 'country',
-            city: 'city',
-            street: 'street',
-        },
-    },
-    {
-        key: '9',
-        firstName: '9',
-        lastName: 'last',
-        registeredAt: new Date,
-        phone: '0543534542',
-        email: 'email@gmail.com',
-        roles: ['teacher'],
-        dateOfBirth: new Date(),
-        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3lIy5jnenOOIroabuRLT6i_DjzJoxU9mKSA8r-jKwtfQWanu',
-        from: {
-            country: 'country',
-            city: 'city',
-            street: 'street',
-        },
-    },
-    {
-        key: '10',
-        firstName: '10',
-        lastName: 'last',
-        registeredAt: new Date,
-        phone: '0543534542',
-        email: 'email@gmail.com',
-        roles: ['teacher'],
-        dateOfBirth: new Date(),
-        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3lIy5jnenOOIroabuRLT6i_DjzJoxU9mKSA8r-jKwtfQWanu',
-        from: {
-            country: 'country',
-            city: 'city',
-            street: 'street',
-        },
-    },
-    {
-        key: '11',
-        firstName: '11',
-        lastName: 'last',
-        registeredAt: new Date,
-        phone: '0543534542',
-        email: 'email@gmail.com',
-        roles: ['teacher'],
-        dateOfBirth: new Date(),
-        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3lIy5jnenOOIroabuRLT6i_DjzJoxU9mKSA8r-jKwtfQWanu',
-        from: {
-            country: 'country',
-            city: 'city',
-            street: 'street',
-        },
-    },
-    {
-        key: '12',
-        firstName: '12',
-        lastName: 'last',
-        registeredAt: new Date,
-        phone: '0543534542',
-        email: 'email@gmail.com',
-        roles: ['teacher'],
-        dateOfBirth: new Date(),
-        photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSf3lIy5jnenOOIroabuRLT6i_DjzJoxU9mKSA8r-jKwtfQWanu',
-        from: {
-            country: 'country',
-            city: 'city',
-            street: 'street',
-        },
-    },
-];
-
+import {connect} from 'react-redux';
+import {fetchTeachers} from '../../actions';
+import StatusMessage from "../../components/status-message/status-message";
 
 class TeachersContainer extends Component {
 
@@ -215,8 +21,12 @@ class TeachersContainer extends Component {
         };
     }
 
+    componentDidMount() {
+        this.props.fetchTeachers();
+    }
+
     getNumberOfPages() {
-        return Math.ceil(users.length / this.state.perPage);
+        return Math.ceil(this.props.users.length / this.state.perPage);
     }
 
     handlePaginationChange(e, {activePage}) {
@@ -232,6 +42,24 @@ class TeachersContainer extends Component {
     }
 
     render() {
+        const {isLoading, error, users} = this.props;
+
+        if (error || !users || isLoading || users.length === 0) {
+            return (
+                <StatusMessage
+                    error={error || !users}
+                    errorClassName="users-error"
+                    errorMessage={error}
+                    loading={isLoading}
+                    loadingMessage={`We are fetching the teachers for you`}
+                    nothing={users && users.length === 0}
+                    nothingMessage={`No teachers to display`}
+                    nothingClassName="users-error"
+                    type="default"
+                />
+            );
+        }
+
         return (
             <div>
                 <SearchTeachers/>
@@ -246,7 +74,7 @@ class TeachersContainer extends Component {
                             <Grid>
                                 <Grid.Row>
                                     <Teachers
-                                        teachers={users}
+                                        {...this.props}
                                         getToLimit={this.getToLimit.bind(this)}
                                         getToSkip={this.getToSkip.bind(this)}
                                     />
@@ -279,4 +107,19 @@ class TeachersContainer extends Component {
     }
 }
 
-export default TeachersContainer;
+const mapStateToProps = state => ({
+    isLoading: state.users.isLoading,
+    users: state.users.users,
+    error: state.users.error,
+});
+
+const mapDispatchToProps = dispatch => ({
+    fetchTeachers: () => {
+        dispatch(fetchTeachers());
+    },
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(TeachersContainer);
