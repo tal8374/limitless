@@ -32,6 +32,7 @@ function get(req, res) {
         if (err) {
             res.send(err)
         }
+
         res.send(result.user)
     });
 }

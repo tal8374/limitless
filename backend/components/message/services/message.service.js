@@ -121,7 +121,6 @@ function createMessage(payload, callback) {
             callback(null, payload);
         })
         .catch((err) => {
-            console.log(err)
             callback(err);
         });
 }

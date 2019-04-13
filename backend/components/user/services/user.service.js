@@ -3,7 +3,7 @@ const User = require("../models/user.model");
 
 function list(payload, callback) {
     return User.UserModel
-        .find({})
+        .find(payload.req.query)
         .populate('comments')
         .populate('students')
         .populate('teachers')

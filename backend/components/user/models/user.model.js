@@ -4,15 +4,14 @@ const Schema = mongoose.Schema;
 const Location = require('../../location/models/location.model');
 
 const UserSchema = new Schema({
-    firstName: {type: 'String', required: true},
-    lastName: {type: 'String', required: true},
-    registerAt: {type: 'Date', default: Date.now()},
+    firstName: {type: 'String'},
+    lastName: {type: 'String'},
     dateOfBirth: {type: 'Date'},
-    lastActive: {type: 'Date'},
+    lastActive: {type: 'Date', default: Date.now()},
     phone: {type: 'String'},
-    email: {type: 'String', required: true, unique: true},
-    password: {type: 'String', required: true},
-    role: [{type: 'String'}],
+    email: {type: 'String', unique: true},
+    password: {type: 'String'},
+    roles: {type: Array, default: ['student']},
     photo: {type: 'String'},
     students: [{type: Schema.Types.ObjectId, ref: "User"}],
     messages: [{type: Schema.Types.ObjectId, ref: "Message"}],
