@@ -1,13 +1,13 @@
 import React, {Component} from 'react'
 import {Comment, Header, Pagination} from 'semantic-ui-react'
 import Profile from "../teachers/teachers";
+import StatusMessage from "../status-message/status-message";
 
 class Comments extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            comments: props.comments ? props.comments : [],
             size: props.size ? props.size : 'large',
             perPage: props.perPage ? props.perPage : 3,
             activePage: 1,
@@ -18,9 +18,11 @@ class Comments extends Component {
     }
 
     getComments() {
+
+
         const toSkip = (this.state.activePage - 1) * this.state.perPage;
 
-        let filtered = this.state.comments.slice(toSkip, toSkip + this.state.perPage);
+        let filtered = this.props.user.comments.slice(toSkip, toSkip + this.state.perPage);
 
         filtered = filtered.map((teacher) => (
             <Profile key={teacher.key} user={teacher} profile={'teacher'}/>
@@ -43,7 +45,7 @@ class Comments extends Component {
     }
 
     getNumberOfPages() {
-        return Math.ceil(this.state.comments.length / this.state.perPage);
+        return Math.ceil(this.props.user.comments.length / this.state.perPage);
     }
 
     handlePaginationChange(e, {activePage}) {
@@ -59,6 +61,26 @@ class Comments extends Component {
     }
 
     render() {
+        const {isLoading, error, user} = this.props;
+
+        if (error || !user || isLoading ) {
+            return (
+                <StatusMessage
+                    error={error || !user}
+                    errorClassName="users-error"
+                    errorMessage={error}
+                    loading={isLoading}
+                    loadingMessage={`We are fetching the comments for you`}
+                    nothing={user}
+                    nothingMessage={`No comments to display`}
+                    nothingClassName="users-error"
+                    type="default"
+                />
+            );
+        }
+
+        console.log(user.comments)
+
         return (
             <Comment.Group size={this.state.size}>
                 <Header as='h3' dividing>

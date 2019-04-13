@@ -1,38 +1,37 @@
 import {
-  REGISTER_REQUEST,
-  REGISTER_SUCCESS,
-  REGISTER_FAILURE,
-  REGISTER_RESET,
+  FETCH_USER_REQUEST,
+  FETCH_USER_SUCCESS,
+  FETCH_USER_FAILURE,
 } from '../actions/types';
 
 const initialState = {
   isLoading: false,
+  users: null,
   error: null,
 };
 
-const register = (state = initialState, action) => {
+const user = (state = initialState, action) => {
   switch (action.type) {
-    case REGISTER_REQUEST:
+    case FETCH_USER_REQUEST:
       return {
         ...state,
         isLoading: true,
         error: null,
       };
-    case REGISTER_SUCCESS:
+    case FETCH_USER_SUCCESS:
       return {
         isLoading: false,
+        user: action.user,
         error: null,
       };
-    case REGISTER_FAILURE:
+    case FETCH_USER_FAILURE:
       return {
-        isLoading: false,
+        ...initialState,
         error: action.error,
       };
-    case REGISTER_RESET:
-      return initialState;
     default:
       return state;
   }
 };
 
-export default register;
+export default user;

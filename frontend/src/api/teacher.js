@@ -5,6 +5,7 @@ import {
 import {getConfig} from '../utils/config';
 
 export const fetchTeachersApi = () => {
+    console.log(TEACHER_URL)
     return axios.get(TEACHER_URL, {
         params: {
             roles: ['teacher']

@@ -3,10 +3,11 @@ import React, {Component} from 'react';
 import {Button, Icon, Item, Label} from 'semantic-ui-react'
 import Rating from "react-rating";
 import {withRouter} from "react-router-dom";
+import StatusMessage from "../status-message/status-message";
 
 class Profile extends Component {
     goToProfile() {
-        let path = '/profile/' + this.props.user.firstName;
+        let path = '/profile/' + this.props.user._id;
         this.props.history.push(path);
     }
 
@@ -85,13 +86,31 @@ class Profile extends Component {
     }
 
     render() {
+        const {isLoading, error, user} = this.props;
+
+        if (error || !user || isLoading ) {
+            return (
+                <StatusMessage
+                    error={error || !user}
+                    errorClassName="users-error"
+                    errorMessage={error}
+                    loading={isLoading}
+                    loadingMessage={`We are fetching the user for you`}
+                    nothing={user}
+                    nothingMessage={`No user to display`}
+                    nothingClassName="users-error"
+                    type="default"
+                />
+            );
+        }
+
         return (
             <Item.Group divided onClick={this.goToProfile.bind(this)}>
                 <Item>
                     {this.getPhoto()}
                     <Item.Content>
                         {this.getFullName()}
-                        <Item.Meta>Last active: {this.formatDate(new Date(this.props.user.lastActive))}</Item.Meta>
+                        <Item.Meta>Last active: {this.formatDate(new Date(user.lastActive))}</Item.Meta>
                         {this.getNumberOfStudents()}
                         {this.getNumberOfTeachers()}
                         {this.getRating()}
