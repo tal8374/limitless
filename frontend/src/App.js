@@ -12,7 +12,7 @@ import TeachersContainer from "./containers/teachers/teachers";
 import AssignmentHelpContainer from "./containers/assignment-help/assignment-help";
 import MessagesContainer from "./containers/messages/messages";
 import AccountContainer from "./containers/account/account";
-import Login from "./components/login/login";
+import LoginContainer from "./containers/login/login";
 import Register from "./components/register/register";
 import UserProfileContainer from "./containers/user-profile/user-profile";
 import Provider from "react-redux/es/components/Provider";
@@ -25,7 +25,7 @@ class App extends Component {
                 <BrowserRouter>
                     <HeaderContainer/>
                     <Switch>
-                        <Route exact path='/login' component={Login}/>
+                        <Route exact path='/login' component={LoginContainer}/>
                         <Route exact path='/register' component={Register}/>
                         <Route exact path='/about-us' component={AboutUsContainer}/>
                         <Route exact path='/assignment-help' component={AssignmentHelpContainer}/>

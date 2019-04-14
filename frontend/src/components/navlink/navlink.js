@@ -23,7 +23,7 @@ class Navlink extends Component {
                 <Col xs={8} md={8}>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Logo />
+                        <Logo/>
                         <Nav className="mr-auto">
 
                             <FindTeacher/>
@@ -32,12 +32,11 @@ class Navlink extends Component {
 
                         </Nav>
                         <Nav>
+                            {!this.props.loggedInUser ? <Login/> : null}
+                            {!this.props.loggedInUser ? <Register/> : null}
 
-                            {/*<Login/>*/}
-                            {/*<Register/>*/}
-
-                            <Messages/>
-                            <UserPersonalDropDown/>
+                            {this.props.loggedInUser ? <Messages/> : null}
+                            {this.props.loggedInUser ? <UserPersonalDropDown handleLogout={this.props.handleLogout}/> : null}
                         </Nav>
                     </Navbar.Collapse>
                 </Col>

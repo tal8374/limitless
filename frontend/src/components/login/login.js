@@ -4,7 +4,7 @@ import './login.css';
 import {Form, Icon, Message, Button} from 'semantic-ui-react';
 import StatusMessage from '../../components/status-message/status-message';
 import Grid from "semantic-ui-react/dist/commonjs/collections/Grid";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 
 class Login extends Component {
 
@@ -37,11 +37,12 @@ class Login extends Component {
 
     handleSubmit = e => {
         if (this.isFormValid()) {
+            this.props.handleLogin(this.state.email, this.state.password);
         }
     };
 
     render() {
-        let {isLoading, error, showRegister} = this.props;
+        let {isLoading, error} = this.props;
 
         const statusMessage = (
             <StatusMessage
@@ -53,6 +54,9 @@ class Login extends Component {
             />
         );
 
+        if (this.props.loggedInUser) {
+            this.props.history.push('/');
+        }
         return (
             <div className='login-form'>
                 <Grid textAlign='center' style={{height: '100%'}} verticalAlign='middle'>
@@ -92,7 +96,7 @@ class Login extends Component {
                             New to this site?&nbsp;
                             {/* eslint-disable-next-line */}
                             <Link className="login-register" to='register'>
-                                Register here
+                                Login here
                             </Link>
                             &nbsp;instead.
                         </Message>
@@ -103,5 +107,5 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);
 

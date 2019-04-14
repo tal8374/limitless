@@ -2,3 +2,4 @@
 
 export * from './teachers';
 export * from './user';
+export * from './auth';

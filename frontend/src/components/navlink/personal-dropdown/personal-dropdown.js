@@ -7,7 +7,7 @@ import UserImage from "./user-image/user-image";
 import {Link} from "react-router-dom";
 
 
-const UserPersonalDropDown = () => {
+const UserPersonalDropDown = (props) => {
     return (
         <NavDropdown style={{top: '3px'}} eventKey={1}
                      title={
@@ -17,7 +17,7 @@ const UserPersonalDropDown = () => {
             <NavDropdown.Divider/>
             <NavDropdown.Item><Link style={{color: 'black',textDecoration: 'none'}} to="/account">Your Profile</Link></NavDropdown.Item>
             <NavDropdown.Divider/>
-            <NavDropdown.Item>Logout</NavDropdown.Item>
+            <NavDropdown.Item onClick={props.handleLogout}>Logout</NavDropdown.Item>
         </NavDropdown>
     );
 };
