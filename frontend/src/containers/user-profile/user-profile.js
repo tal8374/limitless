@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
-import {Grid, Segment} from "semantic-ui-react";
-import Comments from "../../components/comments/comments";
-import Profile from "../../components/profile/profile";
-import Calendar from "../../components/account/calendar/calendar";
 import {fetchUser} from "../../actions";
 import {connect} from "react-redux";
 import StatusMessage from "../teachers/teachers";
+import UserProfile from "../../components/user-profile/user-profile";
 
 class UserProfileContainer extends Component {
 
@@ -19,20 +16,8 @@ class UserProfileContainer extends Component {
 
     componentDidMount() {
         const {userId} = this.props.match.params;
-        this.props.fetchUser(userId);
-    }
 
-    getCalendar() {
-        return !this.state.showCalendar ? null :
-            (
-                <Grid.Row>
-                    <Grid.Column width={1}/>
-                    <Grid.Column width={14}>
-                        <Calendar/>
-                    </Grid.Column>
-                    <Grid.Column width={1}/>
-                </Grid.Row>
-            )
+        this.props.fetchUser(userId);
     }
 
     render() {
@@ -55,21 +40,7 @@ class UserProfileContainer extends Component {
         }
 
         return (
-            <Segment>
-                <Grid style={{marginTop: '1%'}}>
-                    <Grid.Row>
-                        <Grid.Column width={1}/>
-                        <Grid.Column width={11}>
-                            <Profile {...this.props}/>
-                        </Grid.Column>
-                        <Grid.Column width={3}>
-                            <Comments comments={this.props.user.comments}/>
-                        </Grid.Column>
-                        <Grid.Column width={1}/>
-                    </Grid.Row>
-                    {this.getCalendar()}
-                </Grid>
-            </Segment>
+            <UserProfile showCalendar={true} {...this.props}/>
         );
     }
 }

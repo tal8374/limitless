@@ -36,7 +36,6 @@ const auth = (state = initialState, action) => {
         error: null,
       };
     case LOGIN_SUCCESS:
-      console.log(action)
       return {
         ...state,
         isLoading: false,

@@ -11,7 +11,6 @@ export const fetchUser = (id) => dispatch => {
 
     fetchUserApi(id)
         .then(response => {
-            console.log(response.data)
             dispatch(fetchUserSuccess(response.data));
         })
         .catch(error => {

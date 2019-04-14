@@ -6,30 +6,29 @@ import Calendar from '../calendar/calendar';
 import Teachers from '../teachers/teachers';
 import Students from '../students/students';
 import Setting from '../setting/setting';
-import UserProfileContainer from "../../../containers/user-profile/user-profile";
+import UserProfile from "../../user-profile/user-profile";
 
 class AccountMenu extends Component {
-    state = {activeItem: 'calendar'};
+    state = {activeItem: 'profile'};
 
     handleItemClick = (e, {name}) => this.setState({activeItem: name});
 
     getSegment() {
         switch (this.state.activeItem) {
             case 'calendar':
-                return <Calendar/>;
+                return <Calendar {...this.props}/>;
             case 'teachers':
-                return <Teachers/>;
+                return <Teachers {...this.props}/>;
             case 'students':
-                return <Students/>;
+                return <Students {...this.props}/>;
             case 'setting':
-                return <Setting/>;
+                return <Setting {...this.props}/>;
             case 'profile':
-                return <UserProfileContainer showCalendar={false}/>;
+                return <UserProfile user={this.props.loggedInUser} showCalendar={false}/>;
         }
     }
 
     render() {
-
         const {activeItem} = this.state;
 
         return (

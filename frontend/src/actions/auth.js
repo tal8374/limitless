@@ -18,7 +18,6 @@ export const login = (email, password) => dispatch => {
 
     loginApi(email, password)
         .then(response => {
-            console.log(response);
             if (response.data.length === 1) {
                 dispatch(loginSuccess(response.data[0]));
             } else {

@@ -10,6 +10,8 @@ class Teachers extends Component {
     }
 
     getTeachers() {
+        if(!this.props.teachers) return null;
+
         let filtered = this.props.teachers.slice(this.props.getToSkip(), this.props.getToSkip() + this.props.getToLimit());
 
         filtered = filtered.map((teacher) => (
