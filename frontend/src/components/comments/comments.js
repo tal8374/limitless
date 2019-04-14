@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
 import {Comment, Header, Pagination} from 'semantic-ui-react'
 import Profile from "../teachers/teachers";
-import StatusMessage from "../status-message/status-message";
 
 class Comments extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -18,14 +16,12 @@ class Comments extends Component {
     }
 
     getComments() {
-
-
         const toSkip = (this.state.activePage - 1) * this.state.perPage;
 
-        let filtered = this.props.user.comments.slice(toSkip, toSkip + this.state.perPage);
+        let filtered = this.props.comments.slice(toSkip, toSkip + this.state.perPage);
 
         filtered = filtered.map((teacher) => (
-            <Profile key={teacher.key} user={teacher} profile={'teacher'}/>
+            <Profile key={teacher._id} user={teacher} profile={'teacher'}/>
         ));
 
         return filtered.map((comment) => {
@@ -45,7 +41,7 @@ class Comments extends Component {
     }
 
     getNumberOfPages() {
-        return Math.ceil(this.props.user.comments.length / this.state.perPage);
+        return Math.ceil(this.props.comments.length / this.state.perPage);
     }
 
     handlePaginationChange(e, {activePage}) {
@@ -61,26 +57,6 @@ class Comments extends Component {
     }
 
     render() {
-        const {isLoading, error, user} = this.props;
-
-        if (error || !user || isLoading ) {
-            return (
-                <StatusMessage
-                    error={error || !user}
-                    errorClassName="users-error"
-                    errorMessage={error}
-                    loading={isLoading}
-                    loadingMessage={`We are fetching the comments for you`}
-                    nothing={user}
-                    nothingMessage={`No comments to display`}
-                    nothingClassName="users-error"
-                    type="default"
-                />
-            );
-        }
-
-        console.log(user.comments)
-
         return (
             <Comment.Group size={this.state.size}>
                 <Header as='h3' dividing>
@@ -90,7 +66,6 @@ class Comments extends Component {
                 {this.getComments()}
 
                 <Pagination
-
                     activePage={this.state.activePage}
                     boundaryRange={1}
                     onPageChange={this.handlePaginationChange.bind(this)}

@@ -26,7 +26,7 @@ class TeachersContainer extends Component {
     }
 
     getNumberOfPages() {
-        return Math.ceil(this.props.users.length / this.state.perPage);
+        return Math.ceil(this.props.teachers.length / this.state.perPage);
     }
 
     handlePaginationChange(e, {activePage}) {
@@ -41,18 +41,28 @@ class TeachersContainer extends Component {
         return this.state.perPage;
     }
 
-    render() {
-        const {isLoading, error, users} = this.props;
+    getComments() {
+        let comments = [];
 
-        if (error || !users || isLoading || users.length === 0) {
+        for (let i = 0; i < this.props.teachers.length; i++) {
+            comments = [...comments, ...this.props.teachers[i].comments];
+        }
+
+        return comments;
+    }
+
+    render() {
+        const {isLoading, error, teachers} = this.props;
+
+        if (error || !teachers || isLoading || teachers.length === 0) {
             return (
                 <StatusMessage
-                    error={error || !users}
+                    error={error || !teachers}
                     errorClassName="users-error"
                     errorMessage={error}
                     loading={isLoading}
                     loadingMessage={`We are fetching the teachers for you`}
-                    nothing={users && users.length === 0}
+                    nothing={teachers && teachers.length === 0}
                     nothingMessage={`No teachers to display`}
                     nothingClassName="users-error"
                     type="default"
@@ -68,7 +78,7 @@ class TeachersContainer extends Component {
                     <Grid.Row>
                         <Grid.Column width={1}/>
                         <Grid.Column width={4}>
-                            <Comments/>
+                            <Comments comments={this.getComments()}/>
                         </Grid.Column>
                         <Grid.Column width={10}>
                             <Grid>
@@ -108,9 +118,9 @@ class TeachersContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-    isLoading: state.users.isLoading,
-    users: state.users.users,
-    error: state.users.error,
+    isLoading: state.teachers.isLoading,
+    teachers: state.teachers.teachers,
+    error: state.teachers.error,
 });
 
 const mapDispatchToProps = dispatch => ({

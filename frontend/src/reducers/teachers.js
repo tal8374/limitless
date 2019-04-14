@@ -6,7 +6,7 @@ import {
 
 const initialState = {
   isLoading: false,
-  users: null,
+  teachers: null,
   error: null,
 };
 
@@ -21,7 +21,7 @@ const teachers = (state = initialState, action) => {
     case FETCH_TEACHERS_SUCCESS:
       return {
         isLoading: false,
-        users: action.users,
+        teachers: action.teachers,
         error: null,
       };
     case FETCH_TEACHERS_FAILURE:

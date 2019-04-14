@@ -28,7 +28,7 @@ export const fetchTeachersRequest = () => {
 export const fetchTeachersSuccess = data => {
     return {
         type: FETCH_TEACHERS_SUCCESS,
-        users: data,
+        teachers: data,
     };
 };
 

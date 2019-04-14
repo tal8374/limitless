@@ -3,7 +3,7 @@ import teachers from './teachers';
 import user from './user';
 
 const rootReducer = combineReducers({
-  users: teachers,
+  teachers: teachers,
   user: user,
 });
 
