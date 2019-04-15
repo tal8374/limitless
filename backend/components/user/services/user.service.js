@@ -2,6 +2,7 @@ const Lesson = require("../../lesson/models/lesson.model");
 const User = require("../models/user.model");
 
 function list(payload, callback) {
+    console.log(payload.req.query)
     return User.UserModel
         .find(payload.req.query)
         .populate('comments')
@@ -65,14 +66,17 @@ function remove(payload, callback) {
 }
 
 function update(payload, callback) {
+    console.log(payload.req.params)
     return User.UserModel
         .findByIdAndUpdate({_id: payload.req.params.userId}, payload.req.body)
         .exec()
         .then((updatedUser) => {
+            console.log(updatedUser)
             payload.updatedUser = updatedUser;
             callback(null, payload);
         })
         .catch((err) => {
+            // console.log(err)
             callback(err);
         });
 }
