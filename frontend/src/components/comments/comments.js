@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {Comment, Header, Pagination} from 'semantic-ui-react'
-import Profile from "../teachers/teachers";
+import Profile from "../profile/profile";
 
 class Comments extends Component {
     constructor(props) {

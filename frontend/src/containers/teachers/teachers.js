@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import SearchTeachers from "../../components/search-teachers/search-teachers";
-import Teachers from "../../components/teachers/teachers";
 import {Pagination, Grid} from 'semantic-ui-react'
 import Comments from "../../components/comments/comments";
 import {connect} from 'react-redux';
 import {fetchTeachers} from '../../actions';
 import StatusMessage from "../../components/status-message/status-message";
+import Users from "../../components/users/users";
 
 class TeachersContainer extends Component {
 
@@ -83,8 +83,9 @@ class TeachersContainer extends Component {
                         <Grid.Column width={10}>
                             <Grid>
                                 <Grid.Row>
-                                    <Teachers
+                                    <Users
                                         {...this.props}
+                                        users={this.props.teachers}
                                         getToLimit={this.getToLimit.bind(this)}
                                         getToSkip={this.getToSkip.bind(this)}
                                     />

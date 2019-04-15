@@ -3,25 +3,51 @@ import React, {Component} from 'react';
 import {Grid, Menu, Segment} from 'semantic-ui-react'
 
 import Calendar from '../calendar/calendar';
-import Teachers from '../teachers/teachers';
-import Students from '../students/students';
 import Setting from '../setting/setting';
 import UserProfile from "../../user-profile/user-profile";
 import StatusMessage from "../../status-message/status-message";
+import Users from "../../users/users";
 
 class AccountMenu extends Component {
-    state = {activeItem: 'setting'};
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            activeItem: 'setting',
+            perPage: 3
+        };
+
+    }
+
+    getToSkip() {
+        return (this.state.activePage - 1) * this.state.perPage;
+    }
 
     handleItemClick = (e, {name}) => this.setState({activeItem: name});
+
+    getToLimit() {
+        return this.state.perPage;
+    }
 
     getSegment() {
         switch (this.state.activeItem) {
             case 'calendar':
                 return <Calendar {...this.props}/>;
             case 'teachers':
-                return <Teachers {...this.props}/>;
+                return <Users
+                    users={this.props.loggedInUser.teachers}
+                    {...this.props}
+                    getToLimit={this.getToLimit.bind(this)}
+                    getToSkip={this.getToSkip.bind(this)}
+                />;
             case 'students':
-                return <Students {...this.props}/>;
+                return <Users
+                    users={this.props.loggedInUser.students}
+                    {...this.props}
+                    getToLimit={this.getToLimit.bind(this)}
+                    getToSkip={this.getToSkip.bind(this)}
+                />;
             case 'setting':
                 return <Setting {...this.props}/>;
             case 'profile':
@@ -61,7 +87,7 @@ class AccountMenu extends Component {
                                        onClick={this.handleItemClick}/> : null}
                         {loggedInUser.roles.includes('teacher') ?
                             <Menu.Item name='students' active={activeItem === 'students'}
-                                       onClick={this.handleItemClick}/>: null}
+                                       onClick={this.handleItemClick}/> : null}
 
                         <Menu.Item name='setting' active={activeItem === 'setting'} onClick={this.handleItemClick}/>
                     </Menu>
