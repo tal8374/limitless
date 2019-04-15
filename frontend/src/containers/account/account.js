@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import AccountMenu from '../../components/account/account-menu/account-menu';
-import {fetchTeachers} from "../../actions";
+import {updateUser} from "../../actions";
 import {connect} from "react-redux";
 
 class UserAccountContainer extends Component {
@@ -20,8 +20,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    fetchTeachers: () => {
-        dispatch(fetchTeachers());
+    handleUpdate: (id, newProfile) => {
+        dispatch(updateUser(id, newProfile));
     },
 });
 

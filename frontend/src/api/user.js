@@ -29,11 +29,12 @@ export const fetchUserProfileApi = username => {
     return axios.get(USER_URL + username, getConfig());
 };
 
-export const editProfileApi = (username, newProfile) => {
+export const editProfileApi = (id, newProfile) => {
+    console.log(USER_URL + id)
+    console.log(newProfile)
     return axios.put(
-        USER_URL + username + USER_EDIT_URL,
+        USER_URL + id,
         newProfile,
-        getConfig(),
     );
 };
 

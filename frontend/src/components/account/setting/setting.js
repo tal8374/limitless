@@ -2,38 +2,81 @@ import React, {Component} from 'react';
 
 import './setting.css';
 import {Header, Form} from "semantic-ui-react";
+import StatusMessage from "../../../containers/teachers/teachers";
 
 class Setting extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            firstName: '',
-            email: '',
-            password: '',
-            phoneNumber: '',
-            dateOfBirth: null,
-            photo: '',
-            from: {
-                country: '',
-                city: '',
-                street: '',
-            },
 
-        };
+        this.state = {loggedInUser: this.props.loggedInUser}
+    }
+
+    handleSubmit = e => {
+        this.props.handleUpdate(this.state.loggedInUser._id, this.state.loggedInUser);
+    };
+
+    handleChange = (e, {name, value}) => {
+        let loggedInUser = this.state.loggedInUser;
+
+        switch (name) {
+            case 'country':
+                loggedInUser['from'][name] = value;
+                break;
+            case 'city':
+                loggedInUser['from'][name] = value;
+                break;
+            case 'street':
+                loggedInUser['from'][name] = value;
+                break;
+            default:
+                loggedInUser[name] = value;
+        }
+
+        this.setState({loggedInUser: loggedInUser});
+    };
+
+    componentWillReceiveProps(nextProps) {
+        this.setState({loggedInUser: nextProps.loggedInUser})
     }
 
     render() {
+
+        let {isLoading, error, loggedInUser} = this.props;
+
+        if (error || !loggedInUser || isLoading) {
+            return (
+                <StatusMessage
+                    error={error || !loggedInUser}
+                    errorClassName="users-error"
+                    errorMessage={error}
+                    loading={isLoading}
+                    loadingMessage={`We are fetching the setting details for you`}
+                    nothing={loggedInUser}
+                    nothingMessage={`No setting details to display`}
+                    nothingClassName="users-error"
+                    type="default"
+                />
+            );
+        }
+
         return (
             <Form>
                 <Form.Group widths='equal'>
                     <Form.Input
-                        required
                         label="First name"
                         placeholder="First name"
                         type="text"
                         name="firstName"
-                        value={this.state.firstName}
+                        value={this.state.loggedInUser.firstName}
+                        onChange={this.handleChange}
+                    />
+                    <Form.Input
+                        label="Last name"
+                        placeholder="Last name"
+                        type="text"
+                        name="lastName"
+                        value={this.state.loggedInUser.lastName}
                         onChange={this.handleChange}
                     />
                     <Form.Input
@@ -42,7 +85,7 @@ class Setting extends Component {
                         placeholder="Email"
                         type="email"
                         name="email"
-                        value={this.state.email}
+                        value={loggedInUser.email}
                         onChange={this.handleChange}
                     />
                     <Form.Input
@@ -50,7 +93,7 @@ class Setting extends Component {
                         label="Password"
                         type="password"
                         name="password"
-                        value={this.state.password}
+                        value={loggedInUser.password}
                         onChange={this.handleChange}
                     />
                 </Form.Group>
@@ -61,21 +104,31 @@ class Setting extends Component {
                         placeholder="Phone number..."
                         type="text"
                         name="phoneNumber"
-                        value={this.state.phoneNumber}
+                        value={loggedInUser.phoneNumber}
                         onChange={this.handleChange}
                     />
                     <Form.Input
                         label="Date Of Birth"
                         type="date"
                         name="dateOfBirth"
-                        value={this.state.dateOfBirth}
+                        value={loggedInUser.dateOfBirth}
                         onChange={this.handleChange}
                     />
                     <Form.Input
                         label="Photo"
                         type="text"
                         name="photo"
-                        value={this.state.photo}
+                        value={loggedInUser.photo}
+                        onChange={this.handleChange}
+                    />
+                </Form.Group>
+
+                <Form.Group widths='equal'>
+                    <Form.TextArea
+                        label="Description"
+                        type="text"
+                        name="description"
+                        value={loggedInUser.description}
                         onChange={this.handleChange}
                     />
                 </Form.Group>
@@ -90,7 +143,7 @@ class Setting extends Component {
                             placeholder="Country..."
                             type="text"
                             name="country"
-                            value={this.state.from.country}
+                            value={loggedInUser.from.country}
                             onChange={this.handleChange}
                         />
                     </Form.Field>
@@ -100,7 +153,7 @@ class Setting extends Component {
                             placeholder="City..."
                             type="text"
                             name="city"
-                            value={this.state.from.city}
+                            value={loggedInUser.from.city}
                             onChange={this.handleChange}
                         />
                     </Form.Field>
@@ -110,7 +163,7 @@ class Setting extends Component {
                             placeholder="Street..."
                             type="text"
                             name="street"
-                            value={this.state.from.street}
+                            value={loggedInUser.from.street}
                             onChange={this.handleChange}
                         />
                     </Form.Field>
@@ -121,7 +174,8 @@ class Setting extends Component {
 
                 <Form.Button
                     color="grey"
-                    fluid>
+                    fluid
+                    onClick={this.handleSubmit}>
                     Update
                 </Form.Button>
             </Form>

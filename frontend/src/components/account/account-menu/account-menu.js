@@ -9,7 +9,7 @@ import Setting from '../setting/setting';
 import UserProfile from "../../user-profile/user-profile";
 
 class AccountMenu extends Component {
-    state = {activeItem: 'profile'};
+    state = {activeItem: 'setting'};
 
     handleItemClick = (e, {name}) => this.setState({activeItem: name});
 
