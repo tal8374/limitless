@@ -17,6 +17,10 @@ export const loginApi = (email, password) => {
     return axios.get(USER_LOGIN_URL, {params: {email, password}});
 };
 
+export const getUserApi = (_id) => {
+    return axios.get(USER_LOGIN_URL, {params: {_id}});
+};
+
 export const logoutApi = () => {
     return axios.post(USER_LOGOUT_URL, null, getConfig());
 };
@@ -30,8 +34,6 @@ export const fetchUserProfileApi = username => {
 };
 
 export const editProfileApi = (id, newProfile) => {
-    console.log(USER_URL + id)
-    console.log(newProfile)
     return axios.put(
         USER_URL + id,
         newProfile,

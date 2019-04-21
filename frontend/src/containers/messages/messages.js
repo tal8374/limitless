@@ -24,8 +24,6 @@ class MessagesContainer extends Component {
             />
         }
 
-        console.log(loggedInUser)
-
         return (
             <div className="messenger">
                 <div className="scrollable sidebar">

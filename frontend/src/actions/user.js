@@ -45,8 +45,6 @@ export const fetchUserFailure = error => {
 export const updateUser = (id, newProfile) => dispatch => {
     dispatch(updateUserRequest());
 
-    console.log(id, newProfile)
-
     editProfileApi(id, newProfile)
         .then(response => {
             dispatch(updateUserSuccess(response.data));

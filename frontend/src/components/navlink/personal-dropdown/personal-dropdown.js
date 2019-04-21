@@ -13,7 +13,7 @@ const UserPersonalDropDown = (props) => {
                      title={
                          <UserImage/>
                      }>
-            <NavDropdown.Header className='header' href="#action/3.4">Signed up as name</NavDropdown.Header>
+            <NavDropdown.Header className='header' href="#action/3.4">Signed up as {props.loggedInUser ? props.loggedInUser.firstName : ''}</NavDropdown.Header>
             <NavDropdown.Divider/>
             <NavDropdown.Item><Link style={{color: 'black',textDecoration: 'none'}} to="/account">Your Profile</Link></NavDropdown.Item>
             <NavDropdown.Divider/>
