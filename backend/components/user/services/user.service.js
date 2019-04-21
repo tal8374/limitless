@@ -5,11 +5,21 @@ function list(payload, callback) {
     console.log(payload.req.query)
     return User.UserModel
         .find(payload.req.query)
+        .populate({
+            path: 'messages',
+            model: 'Message',
+            populate: [{
+                path: 'for',
+                model: 'User'
+            }, {
+                path: 'by',
+                model: 'User'
+            }]
+        })
         .populate('comments')
         .populate('students')
         .populate('teachers')
         .populate('lessons')
-        .populate('messages')
         .exec()
         .then((users) => {
             payload.users = users;

@@ -3,9 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="0ddbf035-8d05-4e8f-9402-7de0dfc8b06d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/message/config/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/message/config/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/message/models/message.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/message/models/message.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/message/routes/message.route.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/message/routes/message.route.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/user/models/user.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/models/user.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/user/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/components/user/services/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/actions/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/actions/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/actions/types.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/account/account-menu/account-menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/account/account-menu/account-menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/login/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/messages/conversation-list-item/conversation-list-item.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/messages/conversation-list-item/conversation-list-item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/messages/conversation-list/conversation-list.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/messages/conversation-list/conversation-list.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/navlink/messages/messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/navlink/messages/messages.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/navlink/navlink.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/navlink/navlink.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/navlink/personal-dropdown/personal-dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/navlink/personal-dropdown/personal-dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/containers/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/containers/header/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/reducers/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/reducers/auth.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,38 +33,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/components/user/services/user.service.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="79" column="26" lean-forward="true" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
+            <state relative-caret-position="323">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/components/user/models/user.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+            <state relative-caret-position="223">
+              <caret line="17" column="12" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/user/routes/user.route.js">
+        <entry file="file://$PROJECT_DIR$/components/message/routes/message.route.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="70" selection-start-line="7" selection-start-column="70" selection-end-line="7" selection-end-column="70" />
+            <state relative-caret-position="102">
+              <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/components/user/controllers/user.controller.js">
+        <entry file="file://$PROJECT_DIR$/components/message/models/message.model.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
+            <state relative-caret-position="68">
+              <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/components/message/services/message.service.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -66,7 +90,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>console.log</find>
       <find>createSearchCreateByQuery</find>
       <find>updateCreatedBy</find>
       <find>populateCreateBy</find>
@@ -96,6 +119,7 @@
       <find>listen</find>
       <find>lis</find>
       <find>port</find>
+      <find>cheerio</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Projects\learn-english\project\backend</dir>
@@ -109,12 +133,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/components/user/services/lesson.service.js" />
-        <option value="$PROJECT_DIR$/tmp.js" />
         <option value="$PROJECT_DIR$/components/user/controllers/student.controller.js" />
         <option value="$PROJECT_DIR$/components/user/controllers/teacher.controller.js" />
         <option value="$PROJECT_DIR$/components/user/services/teacher.service.js" />
         <option value="$PROJECT_DIR$/components/user/services/student.service.js" />
-        <option value="$PROJECT_DIR$/components/message/config/config.js" />
         <option value="$PROJECT_DIR$/components/comment/config/config.js" />
         <option value="$PROJECT_DIR$/components/homework/config/config.js" />
         <option value="$PROJECT_DIR$/components/location/config/config.js" />
@@ -124,8 +146,6 @@
         <option value="$PROJECT_DIR$/components/user/routes/learning-location.route.js" />
         <option value="$PROJECT_DIR$/components/user/config/config.js" />
         <option value="$PROJECT_DIR$/components/user/routes/comment.route.js" />
-        <option value="$PROJECT_DIR$/components/message/models/message.model.js" />
-        <option value="$PROJECT_DIR$/components/message/routes/message.route.js" />
         <option value="$PROJECT_DIR$/components/message/controllers/message.controller.js" />
         <option value="$PROJECT_DIR$/components/lesson/config/config.js" />
         <option value="$PROJECT_DIR$/components/lesson/models/cancellation.model.js" />
@@ -157,8 +177,12 @@
         <option value="$PROJECT_DIR$/components/user/routes/user.route.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/components/user/controllers/user.controller.js" />
-        <option value="$PROJECT_DIR$/components/user/services/user.service.js" />
+        <option value="$PROJECT_DIR$/tmp.js" />
         <option value="$PROJECT_DIR$/components/user/models/user.model.js" />
+        <option value="$PROJECT_DIR$/components/message/routes/message.route.js" />
+        <option value="$PROJECT_DIR$/components/message/config/config.js" />
+        <option value="$PROJECT_DIR$/components/message/models/message.model.js" />
+        <option value="$PROJECT_DIR$/components/user/services/user.service.js" />
       </list>
     </option>
   </component>
@@ -190,58 +214,6 @@
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="comment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="comment" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="homework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="homework" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="lesson" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="lesson" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="location" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="location" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="message" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -249,7 +221,35 @@
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="message" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="message" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="message" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="message" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="backend" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="message" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
@@ -269,7 +269,7 @@
               <item name="backend" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="user" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
@@ -287,7 +287,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.12.0" />
     <property name="js.last.introduce.type" value="LET" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../frontend" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -317,7 +317,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Node.js.tmp.js">
+  <component name="RunManager" selected="Node.js.user.service.js">
     <configuration name="app.js (1)" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="app.js" working-dir="$PROJECT_DIR$/util">
       <method v="2" />
     </configuration>
@@ -330,15 +330,20 @@
     <configuration name="tmp.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/tmp.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
+    <configuration name="user.service.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/components/user/services/user.service.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Node.js.bin\www" />
       <item itemvalue="Node.js.load_routes.js" />
       <item itemvalue="Node.js.app.js" />
       <item itemvalue="Node.js.app.js (1)" />
       <item itemvalue="Node.js.tmp.js" />
+      <item itemvalue="Node.js.user.service.js" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.user.service.js" />
         <item itemvalue="Node.js.tmp.js" />
         <item itemvalue="Node.js.app.js (1)" />
         <item itemvalue="Node.js.app.js" />
@@ -374,7 +379,12 @@
       <workItem from="1553965399131" duration="221000" />
       <workItem from="1554037165731" duration="636000" />
       <workItem from="1555098326006" duration="6231000" />
-      <workItem from="1555322985511" duration="3986000" />
+      <workItem from="1555322985511" duration="4700000" />
+      <workItem from="1555397260093" duration="384000" />
+      <workItem from="1555528570515" duration="1488000" />
+      <workItem from="1555657459849" duration="1575000" />
+      <workItem from="1555787226365" duration="2941000" />
+      <workItem from="1555830013357" duration="2714000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1549372755859</created>
@@ -439,11 +449,18 @@
       <option name="project" value="LOCAL" />
       <updated>1551859178495</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Updating user's model">
+      <created>1555341585458</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1555341585458</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190888000" />
+    <option name="totallyTimeSpent" value="200704000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -458,13 +475,13 @@
     <frame x="56" y="-6" width="1487" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17768595" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16666667" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32931727" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32903227" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39892906" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -472,7 +489,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32903227" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2632258" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32931727" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -492,37 +509,10 @@
     <MESSAGE value="Putting comment service common logic in comment module." />
     <MESSAGE value="implementing homework module." />
     <MESSAGE value="updating" />
-    <option name="LAST_COMMIT_MESSAGE" value="updating" />
+    <MESSAGE value="Updating user's model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updating user's model" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/components/message/models/message.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="43" lean-forward="true" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/express/lib/router/route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="201" column="14" selection-start-line="201" selection-start-column="14" selection-end-line="201" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/services/learning-location.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="70" selection-start-line="70" selection-end-line="88" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/message/routes/message.route.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="81" lean-forward="true" selection-start-line="11" selection-start-column="81" selection-end-line="11" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/message/controllers/message.controller.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -701,13 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/message/services/message.service.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="97" column="9" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/lesson/routes/cancellation.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -770,13 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/homework/routes/essay.route.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -790,6 +766,7 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tmp.js" />
     <entry file="file://$PROJECT_DIR$/components/user/routes/user.route.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -799,22 +776,57 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/components/user/controllers/user.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="1309">
           <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/user/services/user.service.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="79" column="26" lean-forward="true" selection-start-line="79" selection-start-column="26" selection-end-line="79" selection-end-column="26" />
+        <state relative-caret-position="544">
+          <caret line="36" column="13" lean-forward="true" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/message/config/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/message/models/message.model.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/message/services/message.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/message/routes/message.route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="61" selection-start-line="6" selection-start-column="61" selection-end-line="6" selection-end-column="61" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/user/models/user.model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="45" selection-start-line="13" selection-start-column="45" selection-end-line="13" selection-end-column="45" />
+        <state relative-caret-position="223">
+          <caret line="17" column="12" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/user/services/user.service.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>

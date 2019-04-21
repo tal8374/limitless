@@ -1,13 +1,10 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const User = require('../../user/models/user.model');
-
 const MessageSchema = new Schema({
-    by: {type: User.UserSchema, required: true},
-    for: {type: User.UserSchema, required: true},
-    body: {type: 'String', required: true},
-    createdAt: {type: 'Date', default: Date.now()},
+    by: {type: Schema.Types.ObjectId, ref: 'User'},
+    for: {type: Schema.Types.ObjectId, ref: 'User'},
+    body: {type: 'String'},
     readAt: {type: 'Date'},
     isRead: {type: 'Boolean', default: false},
 });

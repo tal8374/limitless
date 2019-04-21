@@ -12,7 +12,7 @@ const UserSchema = new Schema({
     description: {type: 'String'},
     email: {type: 'String', unique: true, required: true},
     password: {type: 'String', required: true},
-    roles: {type: Array, default: ['student']},
+    roles: {type: Array, default: ['teacher']},
     photo: {type: 'String'},
     students: [{type: Schema.Types.ObjectId, ref: "User"}],
     messages: [{type: Schema.Types.ObjectId, ref: "Message"}],

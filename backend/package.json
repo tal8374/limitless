@@ -6,7 +6,9 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "apify": "^0.13.7",
     "async": "^2.6.2",
+    "cheerio": "^1.0.0-rc.3",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
