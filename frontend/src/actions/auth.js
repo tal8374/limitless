@@ -10,7 +10,7 @@ import {
     LOGOUT,
     UPDATE_LOGGED_IN_SUCCESS,
 } from './types';
-import {loginApi, logoutApi, editProfileApi, getUserApi} from '../api';
+import {loginApi, editProfileApi, getUserApi} from '../api';
 import store from '../store';
 import {apiErrorHandler} from '../utils/errorhandler';
 
@@ -37,11 +37,14 @@ export const login = (email, password) => dispatch => {
 export const updateLoggedInUser = (_id) => dispatch => {
     getUserApi(_id)
         .then(response => {
-            dispatch(updateLoggedInUserSuccess(response.data[0]));
+            let user = response.data[0];
+
+            dispatch(updateLoggedInUserSuccess(user));
         })
         .catch(error => {
         });
 };
+
 
 export const loginRequest = () => {
     return {

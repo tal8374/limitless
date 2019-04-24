@@ -14,7 +14,9 @@ export const fetchUser = (id) => dispatch => {
 
     fetchUserApi(id)
         .then(response => {
-            dispatch(fetchUserSuccess(response.data));
+            let user = response.data;
+
+            dispatch(fetchUserSuccess(user));
         })
         .catch(error => {
             const errorMessage = apiErrorHandler(error);

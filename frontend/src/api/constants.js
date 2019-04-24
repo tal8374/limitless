@@ -9,4 +9,5 @@ export const USER_REGISTER_URL = USER_URL;
 export const USER_LOGIN_URL = USER_URL;
 export const USER_LOGOUT_URL = USER_URL + 'logout/';
 export const USER_EDIT_URL = USER_URL;
-export const USER_DELETE_URL = USER_URL;
+export const MESSAGE_UPDATE_URL = API_URL + 'message/';
+export const MESSAGE_CREATE_URL = API_URL + 'message/';

@@ -1,62 +1,82 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+
+import './conversation-list.css';
+
 import ConversationSearch from '../conversation-search/conversation-search';
 import ConversationListItem from '../conversation-list-item/conversation-list-item';
 import Toolbar from '../tool-bar/tool-bar';
 import ToolbarButton from '../tool-bar-button/tool-bar-button';
-import axios from 'axios';
-
-import './conversation-list.css';
+import {Item} from "semantic-ui-react/dist/commonjs/views/Item";
 
 export default class ConversationList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      conversations: []
-    };
-  }
+    constructor(props) {
+        super(props);
 
-  componentDidMount() {
-    this.getConversations();
-  }
+        let users = this.getUniqueUsers();
 
-  getConversations = () => {
-    axios.get('https://randomuser.me/api/?results=20').then(response => {
-      this.setState(prevState => {
-        let conversations = response.data.results.map(result => {
-          return {
-            photo: result.picture.large,
-            name: `${result.name.first} ${result.name.last}`,
-            text: 'Hello world! This is a long message that needs to be truncated.'
-          };
+        this.state = {
+            conversations: [],
+            users
+        };
+    }
+
+    getUniqueUsers() {
+        const users = [];
+        const met = [];
+        const {loggedInUser} = this.props;
+
+        loggedInUser.messages.forEach(function (message) {
+            if (!met.includes(message.by._id) && message.by._id !== loggedInUser._id) {
+                met.push(message.by._id);
+
+                users.push(message.by);
+            }
         });
 
-        return { ...prevState, conversations };
-      });
-    });
-  }
+        return users;
+    }
 
-  render() {
-    return (
-      <div className="conversation-list">
-        <Toolbar
-          title="Messenger"
-          leftItems={[
-            <ToolbarButton key="cog" icon="ion-ios-cog" />
-          ]}
-          rightItems={[
-            <ToolbarButton key="add" icon="ion-ios-add-circle-outline" />
-          ]}
-        />
-        <ConversationSearch />
-        {
-          this.state.conversations.map(conversation =>
-            <ConversationListItem
-              key={conversation.name}
-              data={conversation}
-            />
-          )
+    onSearchChange(searchUserInput) {
+        if (searchUserInput === '') {
+            this.setState({
+                users: this.getUniqueUsers()
+            })
+        } else {
+            this.setState({
+                users: this.getUniqueUsers()
+                    .filter(user => (user.firstName && user.firstName.includes(searchUserInput)) ||
+                        (user.lastName && user.lastName.includes(searchUserInput)) ||
+                        (user.email && user.email.includes(searchUserInput)))
+            })
         }
-      </div>
-    );
-  }
+    }
+
+    render() {
+        return (
+            <div className="conversation-list">
+                <Toolbar
+                    title="Messenger"
+                    leftItems={[
+                        <ToolbarButton key="cog" icon="ion-ios-cog"/>
+                    ]}
+                    rightItems={[
+                        <ToolbarButton key="add" icon="ion-ios-add-circle-outline"/>
+                    ]}
+                />
+
+                <ConversationSearch
+                    onSearchChange={this.onSearchChange.bind(this)}
+                />
+                {
+                    this.state.users.map(user =>
+                        <ConversationListItem
+                            key={user._id}
+                            user={user}
+                            onUserConversationClicked={this.props.onUserConversationClicked}
+                        />
+                    )
+                }
+            </div>
+        );
+    }
 }

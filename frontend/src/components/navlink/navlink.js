@@ -34,7 +34,7 @@ const Navlink = (props) => {
                         {!props.loggedInUser ? <Login/> : null}
                         {!props.loggedInUser ? <Register/> : null}
 
-                        {props.loggedInUser ? <Messages/> : null}
+                        {props.loggedInUser ? <Messages {...props}/> : null}
                         {props.loggedInUser ?
                             <UserPersonalDropDown {...props} handleLogout={props.handleLogout}/> : null}
                     </Nav>

@@ -12,7 +12,8 @@ export default class Message extends Component {
       showTimestamp
     } = this.props;
 
-    const friendlyTimestamp = moment(data.timestamp).format('LLLL');
+    const friendlyTimestamp = this.props.getTimeStamp(data._id).format('LLLL');
+
     return (
       <div className={[
         'message',
@@ -29,7 +30,7 @@ export default class Message extends Component {
 
         <div className="bubble-container">
           <div className="bubble" title={friendlyTimestamp}>
-            { data.message }
+            { data.body }
           </div>
         </div>
       </div>

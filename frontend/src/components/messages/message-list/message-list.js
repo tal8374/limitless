@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Compose from '../compose/compose';
 import Toolbar from '../tool-bar/tool-bar';
 import ToolbarButton from '../tool-bar-button/tool-bar-button';
@@ -6,173 +6,156 @@ import Message from '../message/message';
 import moment from 'moment';
 
 import './message-list.css';
-
-const MY_USER_ID = 'apple';
+import StatusMessage from "../../status-message/status-message";
 
 export default class MessageList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      messages: []
-    };
-  }
-
-  componentDidMount() {
-    this.getMessages();
-  }
-
-  getMessages = () => {
-    this.setState(prevState => {
-      return {
-        ...prevState,
-        messages: [
-          {
-            id: 1,
-            author: 'apple',
-            message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
-            timestamp: new Date().getTime()
-          },
-          {
-            id: 2,
-            author: 'orange',
-            message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
-            timestamp: new Date().getTime()
-          },
-          {
-            id: 3,
-            author: 'orange',
-            message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
-            timestamp: new Date().getTime()
-          },
-          {
-            id: 4,
-            author: 'apple',
-            message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
-            timestamp: new Date().getTime()
-          },
-          {
-            id: 5,
-            author: 'apple',
-            message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
-            timestamp: new Date().getTime()
-          },
-          {
-            id: 6,
-            author: 'apple',
-            message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
-            timestamp: new Date().getTime()
-          },
-          {
-            id: 7,
-            author: 'orange',
-            message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
-            timestamp: new Date().getTime()
-          },
-          {
-            id: 8,
-            author: 'orange',
-            message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
-            timestamp: new Date().getTime()
-          },
-          {
-            id: 9,
-            author: 'apple',
-            message: 'Hello world! This is a long message that will hopefully get wrapped by our message bubble component! We will see how well it works.',
-            timestamp: new Date().getTime()
-          },
-          {
-            id: 10,
-            author: 'orange',
-            message: 'It looks like it wraps exactly as it is supposed to. Lets see what a reply looks like!',
-            timestamp: new Date().getTime()
-          },
-        ]
-      };
-    });
-  }
-
-  renderMessages() {
-    let i = 0;
-    let messageCount = this.state.messages.length;
-    let messages = [];
-
-    while (i < messageCount) {
-      let previous = this.state.messages[i - 1];
-      let current = this.state.messages[i];
-      let next = this.state.messages[i + 1];
-      let isMine = current.author === MY_USER_ID;
-      let currentMoment = moment(current.timestamp);
-      let prevBySameAuthor = false;
-      let nextBySameAuthor = false;
-      let startsSequence = true;
-      let endsSequence = true;
-      let showTimestamp = true;
-
-      if (previous) {
-        let previousMoment = moment(previous.timestamp);
-        let previousDuration = moment.duration(currentMoment.diff(previousMoment));
-        prevBySameAuthor = previous.author === current.author;
-
-        if (prevBySameAuthor && previousDuration.as('hours') < 1) {
-          startsSequence = false;
-        }
-
-        if (previousDuration.as('hours') < 1) {
-          showTimestamp = false;
-        }
-      }
-
-      if (next) {
-        let nextMoment = moment(next.timestamp);
-        let nextDuration = moment.duration(nextMoment.diff(currentMoment));
-        nextBySameAuthor = next.author === current.author;
-
-        if (nextBySameAuthor && nextDuration.as('hours') < 1) {
-          endsSequence = false;
-        }
-      }
-
-      messages.push(
-        <Message
-          key={i}
-          isMine={isMine}
-          startsSequence={startsSequence}
-          endsSequence={endsSequence}
-          showTimestamp={showTimestamp}
-          data={current}
-        />
-      );
-
-      // Proceed to the next message.
-      i += 1;
+    constructor(props) {
+        super(props);
     }
 
-    return messages;
-  }
+    getFullName(user) {
+        if (!user) {
+            return '';
+        }
 
-  render() {
-    return(
-      <div className="message-list">
-        <Toolbar
-          title="Conversation Title"
-          rightItems={[
-            <ToolbarButton key="info" icon="ion-ios-information-circle-outline" />,
-            <ToolbarButton key="video" icon="ion-ios-videocam" />,
-            <ToolbarButton key="phone" icon="ion-ios-call" />
-          ]}
-        />
+        if (user.firstName) {
+            let lastName = user.lastName ? user.lastName : '';
 
-        <div className="message-list-container">{this.renderMessages()}</div>
+            return user.firstName + ' ' + lastName
+        } else {
+            let email = user.email;
+            let emailTitle = email.substring(0, email.indexOf('@'));
 
-        <Compose rightItems={[
-          <ToolbarButton key="photo" icon="ion-ios-camera" />,
-          <ToolbarButton key="image" icon="ion-ios-image" />,
-          <ToolbarButton key="audio" icon="ion-ios-mic" />,
-          <ToolbarButton key="money" icon="ion-ios-card" />,
-          <ToolbarButton key="games" icon="ion-logo-game-controller-b" />,
-          <ToolbarButton key="emoji" icon="ion-ios-happy" />
-        ]}/>
-      </div>
-    );
-  }
+            return emailTitle
+        }
+    }
+
+    getTimeStamp(_id) {
+        let timestamp = _id.toString().substring(0, 8)
+
+        return moment(new Date(parseInt(timestamp, 16) * 1000));
+    }
+
+    updateReadTime(messages) {
+        if(!this.isUnreadMessages(messages)) {
+            return;
+        }
+
+        this.props.updateMessages({
+            messagesId: messages.map(message => message._id),
+            readAtForUser: new Date()
+        });
+    }
+
+    isUnreadMessages(messages) {
+        return messages.filter(message => message.readAtForUser === undefined).length > 0;
+    }
+
+    renderMessages() {
+        let { user } = this.props;
+
+        if(!user) return;
+
+        let messages = this.props.loggedInUser.messages.filter(message => message.for._id === user._id ||  message.by._id === user._id);
+
+        this.updateReadTime(messages);
+
+        let messageElements = [];
+
+        let i = 0;
+        let messageCount = messages.length;
+
+        while (i < messageCount) {
+            let previous = messages[i - 1];
+            let current = messages[i];
+            let next = messages[i + 1];
+            let isMine = current.by._id === this.props.user._id;
+
+            let currentMoment = this.getTimeStamp(current._id);
+            let prevBySameAuthor = false;
+            let nextBySameAuthor = false;
+            let startsSequence = true;
+            let endsSequence = true;
+            let showTimestamp = true;
+
+            if (previous) {
+                let previousMoment = this.getTimeStamp(previous._id);
+                let previousDuration = moment.duration(currentMoment.diff(previousMoment));
+                prevBySameAuthor = previous._id === current._id;
+
+                if (prevBySameAuthor && previousDuration.as('hours') < 1) {
+                    startsSequence = false;
+                }
+
+                if (previousDuration.as('hours') < 1) {
+                    showTimestamp = false;
+                }
+            }
+
+            if (next) {
+                let nextMoment = this.getTimeStamp(next._id);
+                let nextDuration = moment.duration(nextMoment.diff(currentMoment));
+                nextBySameAuthor = next._id === current._id;
+
+                if (nextBySameAuthor && nextDuration.as('hours') < 1) {
+                    endsSequence = false;
+                }
+            }
+
+            messageElements.push(
+                <Message
+                    key={current._id}
+                    isMine={isMine}
+                    startsSequence={startsSequence}
+                    endsSequence={endsSequence}
+                    showTimestamp={showTimestamp}
+                    data={current}
+                    getTimeStamp={this.getTimeStamp}
+                />
+            );
+
+            i += 1;
+        }
+
+        return messageElements;
+    }
+
+    render() {
+        const {user} = this.props;
+
+        if (!user) {
+            return <StatusMessage
+                type="regular"
+                message='Please pick a user to show his messages'
+                header='No Messages'
+            />
+        }
+
+        return (
+            <div className="message-list">
+                <Toolbar
+                    title={this.getFullName(user)}
+                    rightItems={[
+                        <ToolbarButton key="info" icon="ion-ios-information-circle-outline"/>,
+                        <ToolbarButton key="video" icon="ion-ios-videocam"/>,
+                        <ToolbarButton key="phone" icon="ion-ios-call"/>
+                    ]}
+                />
+
+                <div className="message-list-container">{this.renderMessages()}</div>
+
+                <Compose
+                    {...this.props}
+                    user={user}
+                    rightItems={[
+                    <ToolbarButton key="photo" icon="ion-ios-camera"/>,
+                    <ToolbarButton key="image" icon="ion-ios-image"/>,
+                    <ToolbarButton key="audio" icon="ion-ios-mic"/>,
+                    <ToolbarButton key="money" icon="ion-ios-card"/>,
+                    <ToolbarButton key="games" icon="ion-logo-game-controller-b"/>,
+                    <ToolbarButton key="emoji" icon="ion-ios-happy"/>
+                ]}/>
+            </div>
+        );
+    }
 }

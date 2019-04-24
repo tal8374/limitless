@@ -2,15 +2,32 @@ import React, {Component} from 'react';
 import ConversationList from "../../components/messages/conversation-list/conversation-list";
 import MessageList from "../../components/messages/message-list/message-list";
 import './messages.css';
-import {fetchTeachers} from "../../actions";
 import {connect} from "react-redux";
 import StatusMessage from "../../components/status-message/status-message";
+import {updateMessages, sendMessage} from "../../actions";
 
 class MessagesContainer extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            user: null,
+            messages: []
+        }
+    }
+
+    onUserConversationClicked(user) {
+        this.setState({
+            user: user,
+        });
+    }
+
     render() {
+
         let {loggedInUser} = this.props;
 
-        if(!loggedInUser) {
+        if (!loggedInUser) {
             return <StatusMessage
                 // error={error || !teachers}
                 // errorClassName="users-error"
@@ -25,16 +42,19 @@ class MessagesContainer extends Component {
         }
 
         return (
-            <div className="messenger">
+            <div className="messenger" style={{maxHeight: '850px'}}>
                 <div className="scrollable sidebar">
                     <ConversationList
                         {...this.props}
+                        onUserConversationClicked={this.onUserConversationClicked.bind(this)}
                     />
                 </div>
 
                 <div className="scrollable content">
                     <MessageList
                         {...this.props}
+                        user={this.state.user}
+                        messages={this.state.messages}
                     />
                 </div>
             </div>
@@ -43,16 +63,16 @@ class MessagesContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-    // isLoading: state.messages.isLoading,
-    // messages: state.messages.messages,
-    // error: state.messages.error,
     loggedInUser: state.auth.loggedInUser,
 });
 
 const mapDispatchToProps = dispatch => ({
-    // fetchMessages: () => {
-    //     dispatch(fetchMessages());
-    // },
+    updateMessages: (body) => {
+        dispatch(updateMessages(body));
+    },
+    sendMessage: (body) => {
+        dispatch(sendMessage(body));
+    },
 });
 
 export default connect(
