@@ -22,6 +22,7 @@ function create(req, res) {
         },
         messageService.create
     ], function (err, result) {
+        console.log(err)
         if (err) {
             res.send(err)
         } else if(!result.newMessage) {
@@ -45,10 +46,26 @@ function update(req, res) {
     });
 }
 
+function updateMessages(req, res) {
+    async.waterfall([
+        function (callback) {
+            callback(null, {req: req});
+        },
+        messageService.updateMessages
+    ], function (err, result) {
+        if (err) {
+            res.send(err)
+        }
+        res.send(result.updatedMessages)
+    });
+}
+
 module.exports = {
     list,
 
     create,
 
     update,
+
+    updateMessages
 };

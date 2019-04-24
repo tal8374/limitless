@@ -95,8 +95,24 @@ function populateByUser(payload, callback) {
     });
 }
 
-function addMessageToUser(payload, callback) {
+function addMessageForUser(payload, callback) {
     const user = payload.req.body.for;
+    const newMessage = payload.newMessage;
+
+    user.messages.push(newMessage._id);
+
+    return user
+        .save()
+        .then((message) => {
+            callback(null, payload);
+        })
+        .catch((err) => {
+            callback(err);
+        });
+}
+
+function addMessageByUser(payload, callback) {
+    const user = payload.req.body.by;
     const newMessage = payload.newMessage;
 
     user.messages.push(newMessage._id);
@@ -121,6 +137,7 @@ function createMessage(payload, callback) {
             callback(null, payload);
         })
         .catch((err) => {
+            console.log(err)
             callback(err);
         });
 }
@@ -133,13 +150,16 @@ function create(payload, callback) {
         populateForUser,
         populateByUser,
         createMessage,
-        addMessageToUser
+        addMessageForUser,
+        addMessageByUser
     ], function (err, result) {
+
+            console.log(err)
         if (err) {
             callback(err)
+        } else {
+            callback(null, payload);
         }
-
-        callback(null, payload);
     });
 }
 
@@ -147,10 +167,25 @@ function update(payload, callback) {
     const messageId = payload.req.params.messageId;
     const newMessageData = payload.req.body;
 
-    Message.MessageModel.update({ _id: messageId },newMessageData)
-        .then(function (updateMessage)
-        {
+    Message.MessageModel.update({_id: messageId}, newMessageData)
+        .then(function (updateMessage) {
             payload.updatedMessage = updateMessage
+            callback(null, payload);
+        })
+        .catch(function (err) {
+            callback(err);
+        });
+}
+
+function updateMessages(payload, callback) {
+    const messagesId = payload.req.body.messagesId;
+    const newMessageData = payload.req.body;
+
+    delete payload.req.body.messagesId;
+
+    Message.MessageModel.updateMany({_id: {$in: messagesId}}, newMessageData)
+        .then(function (updateMessage) {
+            payload.updatedMessage = updateMessage;
             callback(null, payload);
         })
         .catch(function (err) {
@@ -163,5 +198,7 @@ module.exports = {
 
     create,
 
-    update
+    update,
+
+    updateMessages
 };

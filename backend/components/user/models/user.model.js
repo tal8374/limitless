@@ -8,12 +8,15 @@ const UserSchema = new Schema({
     lastName: {type: 'String'},
     dateOfBirth: {type: 'Date'},
     lastActive: {type: 'Date', default: Date.now()},
-    phone: {type: 'String'},
+    photo: {
+        type: 'String',
+        default: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTq85eQiwm-1FpHkbvS2gYIkmF8AYK-ycFHCtzUODpaJl2lbZ-f'
+    },
     description: {type: 'String'},
     email: {type: 'String', unique: true, required: true},
     password: {type: 'String', required: true},
     roles: {type: Array, default: ['teacher']},
-    photo: {type: 'String'},
+    phone: {type: 'String'},
     students: [{type: Schema.Types.ObjectId, ref: "User"}],
     messages: [{type: Schema.Types.ObjectId, ref: "Message"}],
     teachers: [{type: Schema.Types.ObjectId, ref: "User"}],

@@ -8,7 +8,8 @@ console.log(appHelper.createPath('message', 'message', false))
 
 router
     .get(appHelper.createPath('message', 'message', false), messageController.list)
-    .post(appHelper.createPath('message', 'message', false), messageController.create);
+    .post(appHelper.createPath('message', 'message', false), messageController.create)
+    .put(appHelper.createPath('message', 'message', false), messageController.updateMessages);
 
 router
     .put(appHelper.createPath('message', 'message', true), messageController.update);
