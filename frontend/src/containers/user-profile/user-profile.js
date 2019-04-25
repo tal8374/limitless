@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
-import {fetchUser} from "../../actions";
+import {fetchUser, showCreateMessageModal, closeCreateMessageModal, sendMessage} from "../../actions";
 import {connect} from "react-redux";
 import StatusMessage from "../teachers/teachers";
 import UserProfile from "../../components/user-profile/user-profile";
+import {Modal, Button, Header, Icon} from 'semantic-ui-react'
+import MessageModal from "../../components/message-modal/message-modal";
 
 class UserProfileContainer extends Component {
 
@@ -39,6 +41,12 @@ class UserProfileContainer extends Component {
             );
         }
 
+        // if (this.props.isCreateMessageModalOpen) {
+        //     return (
+        //         <MessageModal user={user} {...this.props}/>
+        //     )
+        // }
+
         return (
             <UserProfile showCalendar={true} {...this.props}/>
         );
@@ -46,14 +54,25 @@ class UserProfileContainer extends Component {
 }
 
 const mapStateToProps = state => ({
+    loggedInUser: state.auth.loggedInUser,
     isLoading: state.user.isLoading,
     user: state.user.user,
     error: state.user.error,
+    isCreateMessageModalOpen: state.messages.isCreateMessageModalOpen,
 });
 
 const mapDispatchToProps = dispatch => ({
     fetchUser: (userId) => {
         dispatch(fetchUser(userId));
+    },
+    showCreateMessageModal: () => {
+        dispatch(showCreateMessageModal());
+    },
+    closeCreateMessageModal: () => {
+        dispatch(closeCreateMessageModal());
+    },
+    sendMessage: (body) => {
+        dispatch(sendMessage(body));
     },
 });
 

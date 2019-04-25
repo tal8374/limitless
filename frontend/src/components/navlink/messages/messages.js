@@ -7,8 +7,11 @@ import {Link} from "react-router-dom";
 
 const Messages = (props) => {
     function getNumberOfUnReadConversations() {
+        let loggedInUser = props.loggedInUser;
+
         return props.loggedInUser.messages
-            .filter(message => message.readAtForUser === undefined).length;
+            .filter(message => message.readAtForUser === undefined &&
+                message.for._id === loggedInUser._id).length;
     }
 
     return (

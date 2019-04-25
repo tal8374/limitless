@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 
-import {Button, Icon, Item, Label} from 'semantic-ui-react'
+import {Button, Icon, Item, Modal, Header} from 'semantic-ui-react'
 import Rating from "react-rating";
 import {withRouter} from "react-router-dom";
 import StatusMessage from "../status-message/status-message";
+import EventModal from "../event-modal/event-modal";
 
 class Profile extends Component {
     goToProfile() {
@@ -13,9 +14,10 @@ class Profile extends Component {
 
     getPhoto() {
         if (this.props.user.photo) {
-            return <Item.Image src={this.props.user.photo}/>
+            return <Item.Image src={this.props.user.photo} onClick={this.goToProfile.bind(this)}/>
         } else {
-            return <Item.Image src='https://react.semantic-ui.com/images/wireframe/image.png'/>
+            return <Item.Image src='https://react.semantic-ui.com/images/wireframe/image.png'
+                               onClick={this.goToProfile.bind(this)}/>
         }
     }
 
@@ -85,10 +87,14 @@ class Profile extends Component {
         </Item.Meta>
     }
 
+    onCreateMessageClicked() {
+        this.props.showCreateMessageModal();
+    }
+
     render() {
         const {isLoading, error, user} = this.props;
 
-        if (error || !user || isLoading ) {
+        if (error || !user || isLoading) {
             return (
                 <StatusMessage
                     error={error || !user}
@@ -105,16 +111,18 @@ class Profile extends Component {
         }
 
         return (
-            <Item.Group divided onClick={this.goToProfile.bind(this)}>
+            <Item.Group divided>
                 <Item>
                     {this.getPhoto()}
                     <Item.Content>
-                        {this.getFullName()}
-                        <Item.Meta>Last active: {this.formatDate(new Date(user.lastActive))}</Item.Meta>
-                        {this.getNumberOfStudents()}
-                        {this.getNumberOfTeachers()}
-                        {this.getRating()}
-                        {this.getDescription()}
+                        <div onClick={this.goToProfile.bind(this)} style={{cursor: 'pointer'}}>
+                            {this.getFullName()}
+                            <Item.Meta>Last active: {this.formatDate(new Date(user.lastActive))}</Item.Meta>
+                            {this.getNumberOfStudents()}
+                            {this.getNumberOfTeachers()}
+                            {this.getRating()}
+                            {this.getDescription()}
+                        </div>
                         <Item.Extra>
                             <Button
                                 color="grey">
@@ -122,6 +130,7 @@ class Profile extends Component {
                                 <Icon name='right chevron'/>
                             </Button>
                             <Button
+                                onClick={this.onCreateMessageClicked.bind(this)}
                                 color="grey">
                                 Send a message
                                 <Icon name='right chevron'/>

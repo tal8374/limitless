@@ -30,7 +30,7 @@ class Users extends Component {
         let filtered = this.props.users.slice(this.props.getToSkip(), this.props.getToSkip() + this.props.getToLimit());
 
         filtered = filtered.map((user) => (
-            <Profile key={user._id} user={user} profile={this.getProfile(user)}/>
+            <Profile {...this.props} key={user._id} user={user} profile={this.getProfile(user)}/>
         ));
 
         return filtered

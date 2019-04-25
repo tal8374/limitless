@@ -29,11 +29,6 @@ class MessagesContainer extends Component {
 
         if (!loggedInUser) {
             return <StatusMessage
-                // error={error || !teachers}
-                // errorClassName="users-error"
-                // errorMessage={error}
-                // loading={isLoading}
-                // loadingMessage={`We are fetching the teachers for you`}
                 nothing={!loggedInUser || loggedInUser.message.length === 0}
                 nothingMessage={`No messages to display`}
                 nothingClassName="users-error"

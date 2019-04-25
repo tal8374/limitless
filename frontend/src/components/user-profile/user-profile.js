@@ -4,6 +4,7 @@ import Comments from "../../components/comments/comments";
 import Profile from "../../components/profile/profile";
 import Calendar from "../../components/account/calendar/calendar";
 import StatusMessage from "../status-message/status-message";
+import MessageModal from "../message-modal/message-modal";
 
 class UserProfile extends Component {
 
@@ -31,7 +32,7 @@ class UserProfile extends Component {
     render() {
         const {isLoading, error, user} = this.props;
 
-        if (error || !user || isLoading || user.length === 0) {
+        if (error || !user || isLoading) {
             return (
                 <StatusMessage
                     error={error || !user}
@@ -45,6 +46,12 @@ class UserProfile extends Component {
                     type="default"
                 />
             );
+        }
+
+        if (this.props.isCreateMessageModalOpen) {
+            return (
+                <MessageModal user={user} {...this.props}/>
+            )
         }
 
         return (

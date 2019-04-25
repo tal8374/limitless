@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import AccountMenu from '../../components/account/account-menu/account-menu';
-import {updateUser} from "../../actions";
+import {updateUser, showCreateMessageModal} from "../../actions";
 import {connect} from "react-redux";
 
 class UserAccountContainer extends Component {
@@ -16,12 +16,19 @@ class UserAccountContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-    loggedInUser: state.auth.loggedInUser
+    loggedInUser: state.auth.loggedInUser,
+    isCreateMessageModalOpen: state.messages.isCreateMessageModalOpen,
 });
 
 const mapDispatchToProps = dispatch => ({
     handleUpdate: (id, newProfile) => {
         dispatch(updateUser(id, newProfile));
+    },
+    showCreateMessageModal: () => {
+        dispatch(showCreateMessageModal());
+    },
+    closeCreateMessageModal: () => {
+        dispatch(showCreateMessageModal());
     },
 });
 

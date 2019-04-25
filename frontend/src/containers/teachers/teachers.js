@@ -3,7 +3,7 @@ import SearchTeachers from "../../components/search-teachers/search-teachers";
 import {Pagination, Grid} from 'semantic-ui-react'
 import Comments from "../../components/comments/comments";
 import {connect} from 'react-redux';
-import {fetchTeachers} from '../../actions';
+import {fetchTeachers, showCreateMessageModal, updateUser} from '../../actions';
 import StatusMessage from "../../components/status-message/status-message";
 import Users from "../../components/users/users";
 
@@ -19,9 +19,7 @@ class TeachersContainer extends Component {
             showFirstAndLastNav: true,
             showPreviousAndNextNav: true,
         };
-    }
 
-    componentDidMount() {
         this.props.fetchTeachers();
     }
 
@@ -69,6 +67,8 @@ class TeachersContainer extends Component {
                 />
             );
         }
+
+        console.log(this.props.isCreateMessageModalOpen)
 
         return (
             <div>
@@ -122,11 +122,18 @@ const mapStateToProps = state => ({
     isLoading: state.teachers.isLoading,
     teachers: state.teachers.teachers,
     error: state.teachers.error,
+    isCreateMessageModalOpen: state.messages.isCreateMessageModalOpen,
 });
 
 const mapDispatchToProps = dispatch => ({
     fetchTeachers: () => {
         dispatch(fetchTeachers());
+    },
+    showCreateMessageModal: () => {
+        dispatch(showCreateMessageModal());
+    },
+    closeCreateMessageModal: () => {
+        dispatch(showCreateMessageModal());
     },
 });
 

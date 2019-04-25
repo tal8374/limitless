@@ -7,6 +7,8 @@ import Setting from '../setting/setting';
 import UserProfile from "../../user-profile/user-profile";
 import StatusMessage from "../../status-message/status-message";
 import Users from "../../users/users";
+import {showCreateMessageModal, updateUser} from "../../../actions";
+import {connect} from "react-redux";
 
 class AccountMenu extends Component {
 
@@ -51,7 +53,7 @@ class AccountMenu extends Component {
             case 'setting':
                 return <Setting {...this.props}/>;
             case 'profile':
-                return <UserProfile user={this.props.loggedInUser} showCalendar={false}/>;
+                return <UserProfile {...this.props} user={this.props.loggedInUser} showCalendar={false}/>;
         }
     }
 
@@ -103,4 +105,24 @@ class AccountMenu extends Component {
     }
 }
 
-export default AccountMenu;
+const mapStateToProps = state => ({
+    loggedInUser: state.auth.loggedInUser,
+    isCreateMessageModalOpen: state.messages.isCreateMessageModalOpen,
+});
+
+const mapDispatchToProps = dispatch => ({
+    handleUpdate: (id, newProfile) => {
+        dispatch(updateUser(id, newProfile));
+    },
+    showCreateMessageModal: () => {
+        dispatch(showCreateMessageModal());
+    },
+    closeCreateMessageModal: () => {
+        dispatch(showCreateMessageModal());
+    },
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps,
+)(AccountMenu);

@@ -26,10 +26,16 @@ export default class ConversationList extends Component {
         const {loggedInUser} = this.props;
 
         loggedInUser.messages.forEach(function (message) {
-            if (!met.includes(message.by._id) && message.by._id !== loggedInUser._id) {
+            console.log(message.by)
+            if ((!met.includes(message.by._id) && message.by._id !== loggedInUser._id)) {
                 met.push(message.by._id);
 
                 users.push(message.by);
+            }
+            if ((!met.includes(message.for._id) && message.for._id !== loggedInUser._id)) {
+                met.push(message.for._id);
+
+                users.push(message.for);
             }
         });
 
