@@ -4,9 +4,18 @@ import {Button, Icon, Item, Modal, Header} from 'semantic-ui-react'
 import Rating from "react-rating";
 import {withRouter} from "react-router-dom";
 import StatusMessage from "../status-message/status-message";
-import EventModal from "../event-modal/event-modal";
 
 class Profile extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            showOrderLesson: props.showOrderLesson === undefined ? true : props.showOrderLesson,
+            showSendMessage: props.showSendMessage === undefined ? true : props.showSendMessage,
+        }
+    }
+
     goToProfile() {
         let path = '/profile/' + this.props.user._id;
         this.props.history.push(path);
@@ -124,17 +133,22 @@ class Profile extends Component {
                             {this.getDescription()}
                         </div>
                         <Item.Extra>
-                            <Button
-                                color="grey">
-                                Order Lesson
-                                <Icon name='right chevron'/>
-                            </Button>
-                            <Button
-                                onClick={this.onCreateMessageClicked.bind(this)}
-                                color="grey">
-                                Send a message
-                                <Icon name='right chevron'/>
-                            </Button>
+                            {
+                                this.state.showOrderLesson ? <Button
+                                    color="grey">
+                                    Order Lesson
+                                    <Icon name='right chevron'/>
+                                </Button> : null
+                            }
+                            {
+                                this.state.showSendMessage ?
+                                    <Button
+                                        onClick={this.onCreateMessageClicked.bind(this)}
+                                        color="grey">
+                                        Send a message
+                                        <Icon name='right chevron'/>
+                                    </Button> : null
+                            }
                         </Item.Extra>
                     </Item.Content>
                 </Item>

@@ -53,7 +53,13 @@ class AccountMenu extends Component {
             case 'setting':
                 return <Setting {...this.props}/>;
             case 'profile':
-                return <UserProfile {...this.props} user={this.props.loggedInUser} showCalendar={false}/>;
+                return <UserProfile
+                    {...this.props}
+                    user={this.props.loggedInUser}
+                    showCalendar={false}
+                    showOrderLesson={false}
+                    showSendMessage={false}
+                />;
         }
     }
 
